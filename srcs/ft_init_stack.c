@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/12 10:32:00 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:53:38 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ t_stack	*ft_last_list(t_stack *a)
 }
 
 
-void	ft_add_element_end(t_stack *a, t_stack *new_element)
+void	ft_add_element_end(t_stack **a, t_stack *new_element)
 {
 	t_stack	*former_last;
 	
 	if (!new_element)
 		return ;
-	if (a == NULL)
-		a = new_element;
+	if (*a == NULL)
+		*a = new_element;
 	else
 	{
 		// get the address of the last element of the stack
-		former_last = ft_last_list(a);
+		former_last = ft_last_list(*a);
 
 		// give the next pointer of the former last element, the address of
 		// the newly created element of the list
@@ -81,7 +81,7 @@ t_stack	*ft_init_stack(int argc, char **argv)
 			printf("newly created element: %d\n", new->value);
 
 			// add the newly created element to the list
-			ft_add_element_end(a, new);
+			ft_add_element_end(&a, new);
 			i++;	
 		}
 	}
@@ -99,9 +99,10 @@ t_stack	*ft_init_stack(int argc, char **argv)
 			printf("newly created element: %d\n", new->value);
 
 			// add the newly created element to the list
-			ft_add_element_end(a, new);
+			ft_add_element_end(&a, new);
 			i++;
 		}
 	}
+	printf("OK till here at the end of the init_stack function.\n");
 	return (a);
 }

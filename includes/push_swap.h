@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/12 10:26:49 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:02:51 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ typedef struct s_stack
 
 /*---------------------------- FUNCTIONS ---------------------------------------*/
 
+// create the linked list for stack a 
 t_stack *ft_init_stack(int argc, char **argv);
+
+// check if the created linked list for stack a, is sorted
+int	ft_is_sorted(t_stack *a);
 
 #endif

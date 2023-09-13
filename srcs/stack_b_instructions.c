@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   stack_b_instructions.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 15:48:43 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/13 16:39:25 by jsteenpu         ###   ########.fr       */
+/*   Created: 2023/09/13 16:39:55 by jsteenpu          #+#    #+#             */
+/*   Updated: 2023/09/13 16:48:52 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,6 @@ void	ft_sb(t_stack **b)
 	second->next = (*b)->next;
 	(*b)->next = second;  
 }
-/*
-ss: sa and sb at the same time
-*/
-
-void	ft_ss(t_stack **a, t_stack **b)
-{
-	ft_sa(a);
-	ft_sb(b);
-}
 
 // pb (push b): take the 1st element at the top of a and put it at the top of b
 // do nothing if a is empty
@@ -52,7 +43,6 @@ void	ft_pb(t_stack **a, t_stack **b)
 	*a = (*a)->next;
 	(*b)->next = temp;
 }
-
 
 // rb (rotate b): shift up all elements of stack b by 1
 // the first element becomes the last one
@@ -71,17 +61,10 @@ void	ft_rb(t_stack **b)
 	temp->next = NULL;	
 }
 
-
-// rr: ra and rb at the same time
-void	ft_rr(t_stack **a, t_stack **b)
-{
-	ft_ra(a);
-	ft_rb(b);
-}
-
-
-// rrb (reverse rotate b): shift down all elements of stack b by 1
-// the last element becomes the first one
+/*
+ rrb (reverse rotate b): shift down all elements of stack b by 1
+ the last element becomes the first one
+*/
 
 void	ft_rrb(t_stack **b)
 {
@@ -112,6 +95,3 @@ void	ft_rrb(t_stack **b)
 	// set the next pointer of the former last node to NULL
 	temp->next = NULL;
 }
-
-
-// rrr: rra and rrb at the same time

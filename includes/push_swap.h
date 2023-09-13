@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/12 11:02:51 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/13 14:25:02 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,8 @@ t_stack *ft_init_stack(int argc, char **argv);
 
 // check if the created linked list for stack a, is sorted
 int	ft_is_sorted(t_stack *a);
+
+// returns the last node of the list
+t_stack	*ft_last_list(t_stack *a);
 
 #endif

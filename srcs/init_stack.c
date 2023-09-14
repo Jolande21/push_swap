@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/12 11:53:38 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:42:53 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,7 @@ void	ft_add_element_end(t_stack **a, t_stack *new_element)
 		*a = new_element;
 	else
 	{
-		// get the address of the last element of the stack
 		former_last = ft_last_list(*a);
-
-		// give the next pointer of the former last element, the address of
-		// the newly created element of the list
 		former_last->next = new_element;
 	}	
 }
@@ -103,6 +99,5 @@ t_stack	*ft_init_stack(int argc, char **argv)
 			i++;
 		}
 	}
-	printf("OK till here at the end of the init_stack function.\n");
 	return (a);
 }

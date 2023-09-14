@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/14 12:26:14 by jsteenpu         ###   ########.fr       */
+/*   Created: 2023/09/12 15:48:43 by jsteenpu          #+#    #+#             */
+/*   Updated: 2023/09/14 12:29:53 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+/*
+ss: sa and sb at the same time
+*/
+
+void	ft_ss(t_stack **a, t_stack **b)
 {
-	t_stack *a;
-	
-	if (argc < 2)
-		return (-1); // error function or do I need to use exit?
-	a = ft_init_stack(argc, argv);
-	printf("the address stored in stack a: %p.\n", a);
-	if (!a)
-		return (-1);
-	printf("the stack is created!\n");
-	if (!ft_is_sorted(a))
-	{
-		printf("the stack is not sorted.\n");
-		//ft_sort_stack(a);
-	}
-	else
-		printf("the stack is sorted!!\n");
-	return (0); 
+	ft_sa(a);
+	ft_sb(b);
+}
+
+
+// rr: ra and rb at the same time
+void	ft_rr(t_stack **a, t_stack **b)
+{
+	ft_ra(a);
+	ft_rb(b);
+}
+
+// rrr: rra and rrb at the same time
+
+void	ft_rrr(t_stack **a, t_stack **b)
+{
+	ft_rra(a);
+	ft_rrb(b);
 }

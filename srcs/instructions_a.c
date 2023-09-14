@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:35:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/13 16:48:50 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:27:45 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,26 +72,17 @@ void	ft_rra(t_stack **a)
 	int		i;
 
 	i = 0;
-	// store the address of the first node in a tmp pointer
 	temp = *a; // 5850
-
-	// loop through the stack until you find the last node
-	// the head of the stack is now pointing to the last node
-	// keep track of the number of nodes you need to loop through
 	while ((*a)->next)
 	{
 		*a = (*a)->next; // 5820
 		i++;
 	}
-	// assign the next pointer of the head to point to the 'old' first node (= stored in temp)
 	(*a)->next = temp; 
-
-	// go back to the before last node
 	while (i > 1)
 	{
 		temp = temp->next;
 		i--;
 	}
-	// set the next pointer of the former last node to NULL
 	temp->next = NULL;
 }

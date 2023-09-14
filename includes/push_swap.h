@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/13 14:25:02 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:33:44 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,18 @@ int	ft_is_sorted(t_stack *a);
 
 // returns the last node of the list
 t_stack	*ft_last_list(t_stack *a);
+
+// instructions 
+void	ft_sa(t_stack **a);
+void	ft_pa(t_stack **a, t_stack **b);
+void	ft_ra(t_stack **a);
+void	ft_rra(t_stack **a);
+void	ft_sb(t_stack **b);
+void	ft_pb(t_stack **a, t_stack **b);
+void	ft_rb(t_stack **b);
+void	ft_rrb(t_stack **b);
+void	ft_ss(t_stack **a, t_stack **b);
+void	ft_rr(t_stack **a, t_stack **b);
+void	ft_rrr(t_stack **a, t_stack **b);
 
 #endif

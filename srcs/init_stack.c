@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_stack.c                                    :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/14 12:42:53 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/15 14:31:15 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_stack	*ft_create_list_element(int number)
 }
 
 
-t_stack	*ft_init_stack(int argc, char **argv)
+t_stack	*init_stack(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*new;
@@ -92,7 +92,8 @@ t_stack	*ft_init_stack(int argc, char **argv)
 
 			// create a new element to store in the stack
 			new = ft_create_list_element(number);
-			printf("newly created element: %d\n", new->value);
+			printf("newly created element: %d\t", new->value);
+			printf("the address: %p\n", new);
 
 			// add the newly created element to the list
 			ft_add_element_end(&a, new);

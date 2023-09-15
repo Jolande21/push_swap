@@ -6,21 +6,25 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/15 12:55:58 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/15 14:48:42 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	get_maximum(t_stack **a)
+int	get_maximum(t_stack *a)
 {
 	t_stack	*current;
 	int		max;
 
-	current = *a;
+	current = a;
+	printf("the first value to check in get_max: %d\n", current->value);
 	max = current->value;
+	
+	printf("the address of the next node: %p\n", current->next);
 	while (current->next)
 	{
+		printf("the next value to check: %d\n", current->next->value);
 		if (current->next->value > max)
 			max = current->next->value;
 		current = current->next;
@@ -29,7 +33,7 @@ int	get_maximum(t_stack **a)
 	return (max);
 }
 
-int	sorting(t_stack	*a)
-{
+// int	sorting(t_stack	*a)
+// {
 	
-}
+// }

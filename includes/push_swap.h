@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/15 12:52:26 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/15 14:48:59 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ typedef struct s_stack
 /*---------------------------- FUNCTIONS ---------------------------------------*/
 
 // create the linked list for stack a 
-t_stack *ft_init_stack(int argc, char **argv);
+t_stack *init_stack(int argc, char **argv);
 
 // check if the created linked list for stack a, is sorted
 int	ft_is_sorted(t_stack *a);
+int	list_size(t_stack *a);
 
 // returns the last node of the list
 t_stack	*ft_last_list(t_stack *a);
@@ -52,6 +53,6 @@ void	ft_rr(t_stack **a, t_stack **b);
 void	ft_rrr(t_stack **a, t_stack **b);
 
 // radix functions
-int	get_maximum(t_stack **a);
+int	get_maximum(t_stack *a);
 
 #endif

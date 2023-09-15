@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/15 15:59:17 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:10:17 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,11 @@ int	main(int argc, char **argv)
 	{
 		printf("the stack is not sorted.\n");
 		printf("the number of elements in stack a: %d\n", list_size(a));
-		printf("the address stored in a: %p\n", a);
 		get_maximum(a);
+		if (list_size <= 5)
+			printf("This is a small array sort");
+		else
+			ft_sort(&a);
 	}
 	else
 		printf("the stack is sorted!!\n");

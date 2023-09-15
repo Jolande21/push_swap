@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/14 12:33:44 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/15 12:52:26 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,8 @@ void	ft_rrb(t_stack **b);
 void	ft_ss(t_stack **a, t_stack **b);
 void	ft_rr(t_stack **a, t_stack **b);
 void	ft_rrr(t_stack **a, t_stack **b);
+
+// radix functions
+int	get_maximum(t_stack **a);
 
 #endif

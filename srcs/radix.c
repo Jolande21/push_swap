@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/15 12:51:56 by jsteenpu         ###   ########.fr       */
+/*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
+/*   Updated: 2023/09/15 12:55:58 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int	get_maximum(t_stack **a)
 {
-	t_stack *a;
-	
-	if (argc < 2)
-		return (-1); // error function or do I need to use exit?
-	a = ft_init_stack(argc, argv);
-	if (!a)
-		return (-1);
-	printf("the stack is created!\n");
-	if (!ft_is_sorted(a))
+	t_stack	*current;
+	int		max;
+
+	current = *a;
+	max = current->value;
+	while (current->next)
 	{
-		printf("the stack is not sorted.\n");
-		get_maximum(&a);
-		//ft_sort_stack(a);
+		if (current->next->value > max)
+			max = current->next->value;
+		current = current->next;
 	}
-	else
-		printf("the stack is sorted!!\n");
-	return (0); 
+	printf("the max int in the set: %d\n", max);
+	return (max);
+}
+
+int	sorting(t_stack	*a)
+{
+	
 }

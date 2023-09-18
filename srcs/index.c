@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/18 15:07:30 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:37:37 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,15 @@ void	index_stack(t_stack **a)
         else
 			head = head->next;
     }
+
+	// print the indexed list
+	head = *a;
+	while (head)
+	{
+		printf("%d\t, index: %d\n", head->value, head->index);
+		head = head->next;
+	}
+	printf("\n");
 }
 // de functie sprint direct naar de volgende node ipv eerst node na het zoeken van een nieuw min!! 
 // daarom extra controle toegevoegd zodat er kan gecheck worden of er een nieuw minimum gevonden is

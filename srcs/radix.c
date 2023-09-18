@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/18 11:11:45 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:52:42 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,28 @@ int	get_maximum(t_stack *a)
 	printf("the max int in the set: %d\n", max);
 	return (max);
 }
+
+// this function sets the index of each element in the linked list 
+// in binairy format
+
+void	binaire_index(t_stack *a)
+{
+	t_stack	*current;
+	int		base;
+	int		i;
+	char	*binairy;
+
+	current = a;
+	base = 2;
+	// divide the index by 2
+	// stel = 8
+	// * 8 / 2 = 4 rem = 0 - 1
+	// 4 / 2 = 2 rem = 0 - 2
+	// 2 / 2 = 1 rem = 0 - 3
+	// 1 / 2 = 0 rem = 1
+	i = 0; 
+	while ((current->index) / base > 0)
+		i++;
+	
+}
+

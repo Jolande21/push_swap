@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/18 14:41:24 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/18 14:55:47 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,35 @@ void	index_stack(t_stack **a)
 {
     t_stack	*head;
     int		index;
-	int		min_value;
+	int		min_value1;
+	int		min_value2;
 
 	head = *a;
 	index = -1;
-	min_value = get_minimum(a); // 1
+	min_value1 = get_minimum(a); // 6
+	min_value2  = min_value1; // 6
     while (head)
     {
-		printf("the min: %d\n", min_value);
-		if (head->value == min_value && head->index == -1)
+		//printf("the min: %d\n", min_value1);
+		if (head->value == min_value1 && head->index == -1)
 		{
 			// set the correct index
-			printf("the head value: %d\n", head->value);
+			//printf("the head value: %d\n", head->value);
 			index++;
 			head->index = index; // 0 -> 1
-
 			// // get the new minimum value 
-			// min_value = get_minimum(a); // 7
+			min_value2 = get_minimum(a); // 38
 			
 			// // init the head back to the beginning of the list
-			// head = *a; // Reset head to the beginning of the list
+			//head = *a; // Reset head to the beginning of the list
 		}
-        head = head->next;
+		if (min_value1 != min_value2)
+		{
+			head = *a;
+			min_value1 = min_value2;
+		}
+        else
+			head = head->next;
     }
 	
 	// print the indexed list

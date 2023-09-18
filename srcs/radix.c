@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/15 14:48:42 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/18 11:11:45 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,3 @@ int	get_maximum(t_stack *a)
 	printf("the max int in the set: %d\n", max);
 	return (max);
 }
-
-// int	sorting(t_stack	*a)
-// {
-	
-// }

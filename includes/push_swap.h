@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/15 17:10:42 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:35:28 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
 # include "../libft/libft.h"
 # include <stdio.h> // delete at the end !!!
 # include <stdlib.h>
+# include <limits.h> // delete after use !! to find the min value
 
 /*---------------------------- STRUCTURE ---------------------------------------*/
 
 typedef struct s_stack 
 {
     int             value;
+    int             index;
     struct s_stack  *next;
 } t_stack;
 
@@ -54,5 +56,9 @@ void	ft_rrr(t_stack **a, t_stack **b);
 
 // radix functions
 int	get_maximum(t_stack *a);
+
+// index functions
+void	index_stack(t_stack **a);
+
 
 #endif

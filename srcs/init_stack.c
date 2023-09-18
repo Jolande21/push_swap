@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/15 14:31:15 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/18 11:40:14 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ t_stack	*ft_create_list_element(int number)
 	if (!new_element)
 		return (NULL);
 	new_element->value = number;
+	new_element->index = -1;
 	new_element->next = NULL;
 	return (new_element);
 }

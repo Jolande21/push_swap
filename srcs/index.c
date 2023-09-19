@@ -6,41 +6,41 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/18 17:37:37 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/19 12:08:23 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int get_minimum(t_stack **a)
+static int	get_minimum(t_stack **a)
 {
-    t_stack	*head;
-    int		min_value;
+	t_stack	*head;
+	int		min_value;
 
 	head = *a;
 	min_value = INT_MAX;
-    while (head)
-    {
-        if (head->value < min_value && head->index == -1)
-            min_value = head->value;
-        head = head->next;
-    }
-    return (min_value);
+	while (head)
+	{
+		if (head->value < min_value && head->index == -1)
+			min_value = head->value;
+		head = head->next;
+	}
+	return (min_value);
 }
 
-void	index_stack(t_stack **a)
+int	index_stack(t_stack **a)
 {
-    t_stack	*head;
-    int		index;
-	int		min_value1;
-	int		min_value2;
+	t_stack			*head;
+	unsigned int	index;
+	int				min_value1;
+	int				min_value2;
 
 	head = *a;
 	index = -1;
 	min_value1 = get_minimum(a); 
 	min_value2  = min_value1; 
-    while (head)
-    {
+	while (head)
+	{
 		if (head->value == min_value1 && head->index == -1)
 		{
 			index++;
@@ -52,10 +52,10 @@ void	index_stack(t_stack **a)
 			head = *a;
 			min_value1 = min_value2;
 		}
-        else
+		else
 			head = head->next;
-    }
-
+	}
+	
 	// print the indexed list
 	head = *a;
 	while (head)
@@ -64,6 +64,7 @@ void	index_stack(t_stack **a)
 		head = head->next;
 	}
 	printf("\n");
+	return (1);
 }
 // de functie sprint direct naar de volgende node ipv eerst node na het zoeken van een nieuw min!! 
 // daarom extra controle toegevoegd zodat er kan gecheck worden of er een nieuw minimum gevonden is

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/18 11:28:06 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:09:20 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 	t_stack *a;
 	t_stack	*head;
 	int		size;
+	int		check;
 	
 	if (argc < 2)
 		return (-1); // error function or do I need to use exit?
@@ -27,7 +28,7 @@ int	main(int argc, char **argv)
 		return (-1);
 	printf("the stack is created!\n");
 
-	// print the elements of the stack
+	// print the elements of the stack; the values and the initial index
 	head = a;
 	while (head)
 	{
@@ -38,12 +39,29 @@ int	main(int argc, char **argv)
 
 	// check if the list is sorted	
 	size = list_size(a);
+	printf("the number of elements in stack a: %d\n", size);
+
+	// if the list is not sorted
+	printf("the address of the first node: %p\n", a);
 	if (!ft_is_sorted(a))
 	{
+		// print message
 		printf("the stack is not sorted.\n");
-		printf("the number of elements in stack a: %d\n", list_size(a));
+
+		// look for the maximum int in the set of values
 		get_maximum(a);
-		index_stack(&a);
+
+		// create an index of the int set in ascending order
+		check = index_stack(&a);
+		if (!check)
+		{
+			printf("no indexation so the program stops here.\n");
+			return (-1);
+		}
+		else
+			binary_index(a);
+
+		// sort based on the size of the list 
 		if (size <= 5)
 			printf("This is a small array sort");
 		// else

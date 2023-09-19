@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/18 13:35:28 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:05:24 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,16 @@
 
 typedef struct s_stack 
 {
-    int             value;
-    int             index;
-    struct s_stack  *next;
+	int				value;
+	int				index;
+	unsigned int	index_bin;
+	struct s_stack	*next;
 } t_stack;
 
 /*---------------------------- FUNCTIONS ---------------------------------------*/
 
 // create the linked list for stack a 
-t_stack *init_stack(int argc, char **argv);
+t_stack	*init_stack(int argc, char **argv);
 
 // check if the created linked list for stack a, is sorted
 int	ft_is_sorted(t_stack *a);
@@ -58,7 +59,10 @@ void	ft_rrr(t_stack **a, t_stack **b);
 int	get_maximum(t_stack *a);
 
 // index functions
-void	index_stack(t_stack **a);
+int	index_stack(t_stack **a);
+
+// conversion index to binary 
+void	binary_index(t_stack *a);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:51:10 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/19 12:10:02 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/19 12:15:33 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	binary_index(t_stack *a)
 	t_stack			*current;
 
 	// update the binary index
+    // what about the int type -> check unsigned or just int?
 	current = a;
 	while (current)
 	{

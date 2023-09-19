@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/19 12:09:20 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/19 18:47:48 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,13 @@ int	main(int argc, char **argv)
 			return (-1);
 		}
 		else
+		{
+			// convert index to int binary
 			binary_index(a);
+
+			// store the bin index in char array
+			init_bin_array(a); 
+		}	
 
 		// sort based on the size of the list 
 		if (size <= 5)

@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/19 19:35:03 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 11:07:29 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,21 +104,29 @@ void	init_bin_array(t_stack *head)
 
 // stack A is for 1 
 // stack B is for 0
+// hello -> ft_strlen = 5
+// dus van 0 tem 4 
 
 void	push(t_stack *a, char **bin_array)
 {
 	int		i;
 	t_stack	*b;
+	size_t	len;
+	
 	
 	i = 0;
 	b = NULL;
+	len = 0;
 	while (bin_array[i])
 	{
-		if (bin_array[i][0] == '0')
+		len = ft_strlen(bin_array[i]);
+		printf("the length: %zu of the value to check: %c\n", len, bin_array[i][len - 1]);
+		if (bin_array[i][len - 1] == '0')
 		{
+			printf("the bin index pushed to b: %s\n", bin_array[i]);
 			ft_pb(&a, &b);
+			printf("the b stack: %u\n", b->index_bin);
 		}
-		printf("the index in push loop: %i\n", i);
 		i++;
 	}
 
@@ -131,3 +139,5 @@ void	push(t_stack *a, char **bin_array)
 		b = b->next;
 	}
 }
+
+// probleem: ik moet telkens naar het einde gaan van ieder array met de bin index om the least significant digit te vinden

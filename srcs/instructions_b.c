@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_b_instructions.c                             :+:      :+:    :+:   */
+/*   instructions_b.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:39:55 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/14 12:28:26 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:40:31 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,12 @@ void	ft_pb(t_stack **a, t_stack **b)
 	if (!*a)
 		return ;
 	temp = *b;
+	printf("pb: the start address of b: \t%p\n", *b);
 	*b = *a;
+	printf("pb: the new address of b: \t%p\n", *b);
+	printf("pb: the start address of a: \t%p\n", *a);
 	*a = (*a)->next;
+	printf("pb: the new address of a: \t%p\n", *a);
 	(*b)->next = temp;
 }
 

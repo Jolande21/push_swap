@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/19 19:29:33 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 11:54:52 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_stack
 	int				value;
 	int				index;
 	unsigned int	index_bin;
+	char			*bin_array;
 	struct s_stack	*next;
 } t_stack;
 
@@ -69,6 +70,6 @@ void	binary_index(t_stack *a);
 
 // store binary index in char array
 void	init_bin_array(t_stack *head);
-void	push(t_stack *a, char **bin_array);
+void	push(t_stack *a);
 
 #endif

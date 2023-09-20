@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/20 11:07:29 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 13:54:05 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,47 +56,24 @@ int	get_maximum(t_stack *a)
 void	init_bin_array(t_stack *head)
 {
 	t_stack	*current;
-	char	**binary; // the 2D array that holds the address of all the binary index 
-	int		i;
-	int		size_a; // total #of elements in stack a 
 
-	// allocate memory to store all the created binary arrays
-	// the size of this 2d array is equal to the number of elements in the stack
-	//size_a = (ft_last_list(head)->index) +  1;
-	size_a = list_size(head);
-	
-	binary = (char **)malloc(sizeof(char *) * (size_a + 1));
-	if (!binary)
-	{
-		printf("malloc error in bin_to_array function.\n");
-		return ;
-	}
-	printf("the size of the list: %d\n", size_a);
-	// set the end of the 2D array
-	binary[size_a] = NULL;
-
-	// fill the 2D array with the address of each newly created bin array
 	current = head;
-	i = 0;
-	while (i < size_a)
+	while (current)
 	{
-		binary[i] = ft_itoa(current->index_bin);
-		if (!binary[i])
-			return ;
-		printf("The address of the binary arrays: %p\n", binary[i]);
+		current->bin_array = ft_itoa(current->index_bin);
+		//printf("The address of the binary arrays: %p\n", current->bin_array);
 		current = current->next;
-		i++;
 	}
 	
 	// print all the binary arrays
-	i = 0;
+	current = head;
 	printf("the created binary array:\n");
-	while (binary[i])
+	while (current)
 	{
-		printf("%s\n", binary[i]);
-		i++;
+		printf("%s\n", current->bin_array);
+		current = current->next;
 	}
-	push(head, binary);
+	push(head);
 }
 
 // this function pushes all elements with ith digit == 0
@@ -107,36 +84,55 @@ void	init_bin_array(t_stack *head)
 // hello -> ft_strlen = 5
 // dus van 0 tem 4 
 
-void	push(t_stack *a, char **bin_array)
+void	push(t_stack *a)
 {
-	int		i;
 	t_stack	*b;
+	t_stack	*current; // var to check the stack a after pb
 	size_t	len;
+
+	current = a;
+	// CHECK: print stack a
+	printf("this is the stack a before the push:\n");
+	while (a)
+	{
+		printf("the value: %d\t the index: %d\t the binary index: %u\n", a->value, a->index, a->index_bin);
+		a = a->next;
+	}
 	
-	
-	i = 0;
+	// push all elements of which the i-th digit is equal to '0' to b
 	b = NULL;
 	len = 0;
-	while (bin_array[i])
+	
+	while (current)
 	{
-		len = ft_strlen(bin_array[i]);
-		printf("the length: %zu of the value to check: %c\n", len, bin_array[i][len - 1]);
-		if (bin_array[i][len - 1] == '0')
+		//printf("push: the address of the 1st node: %p\n", a);
+		len = ft_strlen(current->bin_array);
+		//printf("the length: %zu of the value to check: %c\n", len, a->bin_array[len - 1]);
+		if (current->bin_array[len - 1] == '0')
 		{
-			printf("the bin index pushed to b: %s\n", bin_array[i]);
-			ft_pb(&a, &b);
-			printf("the b stack: %u\n", b->index_bin);
+			//printf("the bin index pushed to b: %u\n", a->index_bin);
+			ft_pb(&current, &b);
+			//printf("the b stack: %u\n", b->index_bin);
 		}
-		i++;
+		else
+			current = current->next;
+		//printf("The address of the next node: %p\n", a->next);
 	}
 
-	// print stack b 
-	i = 0;
+	// CHECK: print stack b
 	printf("this is the stack b:\n");
 	while (b)
 	{
 		printf("the value: %d\t the index: %d\t the binary index: %u\n", b->value, b->index, b->index_bin);
 		b = b->next;
+	}
+
+	// CHECK: print stack a
+	printf("this is the stack a after the push:\n");
+	while (a)
+	{
+		printf("the value: %d\t the index: %d\t the binary index: %u\n", a->value, a->index, a->index_bin);
+		a = a->next;
 	}
 }
 

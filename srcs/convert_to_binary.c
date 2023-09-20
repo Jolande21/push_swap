@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:51:10 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/19 12:15:33 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 11:49:02 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	binary_index(t_stack *a)
 	while (current)
 	{
 		printf("value: %d\t index: %u\t binary index: %u\n", current->value, current->index, current->index_bin);
+		//printf("the address of the next node: %p\n", current->next);
 		current = current->next;
 	}
 	

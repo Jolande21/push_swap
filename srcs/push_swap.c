@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/19 18:47:48 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 11:46:22 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 	while (head)
 	{
 		printf("%d\t, index: %d\n", head->value, head->index);
+		//printf("the address of the next node: %p\n", head->next);
 		head = head->next;
 	}
 	printf("\n");

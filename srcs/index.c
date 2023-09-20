@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/19 12:08:23 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 11:47:14 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	index_stack(t_stack **a)
 	while (head)
 	{
 		printf("%d\t, index: %d\n", head->value, head->index);
+		//printf("the address of the next node: %p\n", head->next);
 		head = head->next;
 	}
 	printf("\n");

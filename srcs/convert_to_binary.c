@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:51:10 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/20 11:49:02 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 16:19:22 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,4 @@ void	binary_index(t_stack *a)
 		//printf("the address of the next node: %p\n", current->next);
 		current = current->next;
 	}
-	
 }

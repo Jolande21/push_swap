@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/20 11:46:22 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 15:55:26 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,6 @@ int	main(int argc, char **argv)
 	{
 		// print message
 		printf("the stack is not sorted.\n");
-
-		// look for the maximum int in the set of values
-		get_maximum(a);
 
 		// create an index of the int set in ascending order
 		check = index_stack(&a);

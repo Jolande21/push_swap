@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/20 13:54:05 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 16:18:45 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,26 @@ as how we put numbers in the boxes in radix sort.
 
 */
 
-int	get_maximum(t_stack *a)
-{
-	t_stack	*current;
-	int		max;
+// int	get_maximum(t_stack *a)
+// {
+// 	t_stack	*current;
+// 	int		max;
 
-	current = a;
-	//printf("the first value to check in get_max: %d\n", current->value);
-	max = current->value;
+// 	current = a;
+// 	//printf("the first value to check in get_max: %d\n", current->value);
+// 	max = current->index;
 	
-	//printf("the address of the next node: %p\n", current->next);
-	while (current->next)
-	{
-		//printf("the next value to check: %d\n", current->next->value);
-		if (current->next->value > max)
-			max = current->next->value;
-		current = current->next;
-	}
-	printf("the max int in the set: %d\n", max);
-	return (max);
-}
+// 	//printf("the address of the next node: %p\n", current->next);
+// 	while (current)
+// 	{
+// 		//printf("the next value to check: %d\n", current->next->value);
+// 		if (current->index > max)
+// 			max = current->index;
+// 		current = current->next;
+// 	}
+// 	printf("the max index in the set: %d\n", max);
+// 	return (max);
+// }
 
 // this function will convert the int binary index into a char array
 // this array stores the binary of index 
@@ -56,7 +56,10 @@ int	get_maximum(t_stack *a)
 void	init_bin_array(t_stack *head)
 {
 	t_stack	*current;
-
+	//int		max_index;
+	int		max_bits;
+	
+	// count the number of bits in the max index
 	current = head;
 	while (current)
 	{
@@ -64,6 +67,27 @@ void	init_bin_array(t_stack *head)
 		//printf("The address of the binary arrays: %p\n", current->bin_array);
 		current = current->next;
 	}
+
+	// look for the maximum index 
+	// the maximum index = the size of the list - 1 
+	// because the index starts at 0
+	//max_index = list_size(head) - 1;
+	printf("OK");
+
+
+	// count the number of bits in the max index
+	current = head;
+	max_bits = 0;
+	while (current)
+	{
+		if (current->index == 6)
+		{
+			while (current->bin_array)
+				max_bits++;
+		}
+		current = current->next;
+	}
+	printf("the max number of bits to check: %d\n", max_bits);
 	
 	// print all the binary arrays
 	current = head;

@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 13:58:51 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/20 11:45:41 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/20 16:16:57 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	list_size(t_stack *a)
 	{
 		count++;
 		a = a->next;
-		//printf("list_size: the address of the next node: %p\n", a);
+		printf("list_size: the address of the next node: %p\n", a);
 	}
+	printf("OK");
 	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/21 16:53:22 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/21 16:20:20 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,28 +75,60 @@ void	push(t_stack *a)
 	t_stack *current; // var to print the status of each stack
 	size_t	len;
 	int		max_index;
-	int		i;
 
+
+	// get the size of the list
+	printf("start init_bin_array OK\n");
 	max_index = list_size(a);
-	
+	printf("the max index in stack a: %d\n", max_index);
+	// push all elements of which the i-th digit is equal to '0' to b
 	b = NULL;
 	len = 0;
-	i = 0;
-	while (i < 3)
+	while (max_index)
 	{
-		while (max_index)
+		printf("push: the address of the 1st node: %p\n", a);
+		len = ft_strlen(a->bin_array);
+		//printf("the length: %zu of the value to check: %c\n", len, a->bin_array[len - 1]);
+		if (a->bin_array[len - 1] == '0')
 		{
-			len = ft_strlen(a->bin_array);
-			if (a->bin_array[len - 1] == '0')
-				ft_pb(&a, &b);
-			else
-				ft_ra(&a);
-			max_index--;
+			//printf("the bin index pushed to b: %u\n", a->index_bin);
+			ft_pb(&a, &b);
+			//printf("the b stack: %u\n", b->index_bin);
 		}
-		while (b)
-			ft_pa(&a, &b);
-		i++;
+		else
+		{
+			ft_ra(&a);
+			printf("The address of the current node after ra: %p\n", a);
+			printf("The address of the next node: %p\n", a->next);
+			printf("The address of the new last node: %p\n", ft_last_list(a));
+		}
+		max_index--;
 	}
+
+	// CHECK: print stack b
+	current = b;
+	printf("this is the stack b:\n");
+	while (current)
+	{
+		printf("the value: %d\t the index: %d\t the binary index: %u\n", current->value, current->index, current->index_bin);
+		current = current->next;
+	}
+
+	// CHECK: print stack a
+	current = a;
+	printf("this is the stack a after the push:\n");
+	while (current)
+	{
+		printf("the value: %d\t the index: %d\t the binary index: %u\n", current->value, current->index, current->index_bin);
+		current = current->next;
+	}
+	
+	// push everything back to stack a until b is empty
+	while (b)
+	{
+		ft_pa(&a, &b);
+	}
+
 	// CHECK: print stack b
 	current = b;
 	printf("this is the stack b:\n");

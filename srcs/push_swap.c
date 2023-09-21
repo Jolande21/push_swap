@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/20 15:55:26 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/21 11:04:07 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 
 	// print the elements of the stack; the values and the initial index
 	head = a;
+	printf("----------------------the linked list in main:----------------------\n");
 	while (head)
 	{
 		printf("%d\t, index: %d\n", head->value, head->index);
@@ -38,12 +39,12 @@ int	main(int argc, char **argv)
 	}
 	printf("\n");
 
-	// check if the list is sorted	
+	// check the size of the list
+	printf("----------------------the size of the list:----------------------\n");
 	size = list_size(a);
 	printf("the number of elements in stack a: %d\n", size);
 
 	// if the list is not sorted
-	printf("the address of the first node: %p\n", a);
 	if (!ft_is_sorted(a))
 	{
 		// print message
@@ -66,8 +67,8 @@ int	main(int argc, char **argv)
 		}	
 
 		// sort based on the size of the list 
-		if (size <= 5)
-			printf("This is a small array sort");
+		// if (size <= 5)
+		// 	printf("This is a small array sort");
 		// else
 		// 	ft_sort(&a);
 	}

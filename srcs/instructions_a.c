@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_a_instructions.c                             :+:      :+:    :+:   */
+/*   instructions_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:35:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/14 12:27:45 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:55:59 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ void	ft_ra(t_stack **a)
 	
 	if (!*a)
 		return ;
-	temp = *a; 
-	*a = (*a)->next; 
-	last_node = ft_last_list(*a); 
-	last_node->next = temp; 
-	temp->next = NULL;
+	temp = *a; // 6810
+	*a = (*a)->next; // 6830
+	last_node = ft_last_list(*a); //68f0 
+	last_node->next = temp; // 6810
+	temp->next = NULL; 
 }
 
 /*

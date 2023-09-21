@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/20 11:47:14 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/21 10:56:58 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	index_stack(t_stack **a)
 	
 	// print the indexed list
 	head = *a;
+	printf("-----------the stack a after creating an index in ascending order -----------\n");
 	while (head)
 	{
 		printf("%d\t, index: %d\n", head->value, head->index);

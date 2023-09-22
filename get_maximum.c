@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_check.c                                    :+:      :+:    :+:   */
+/*   get_maximum.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/22 11:51:06 by jolandestee      ###   ########.fr       */
+/*   Created: 2023/09/22 10:46:51 by jolandestee       #+#    #+#             */
+/*   Updated: 2023/09/22 10:47:03 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-
-int	ft_is_sorted(t_stack *a)
+/*
+int	get_maximum(t_stack *a)
 {
 	t_stack	*current;
+	int		max;
 
 	current = a;
-	//printf("the address of the first node: %p\n", current);
+	//printf("the first value to check in get_max: %d\n", current->value);
+	max = current->index;
+	
+	//printf("the address of the next node: %p\n", current->next);
 	while (current)
 	{
-		// check if the value (number) of the current element of the list
-		// if it is greater than the value of the next number
-		// then the list is not sorted
-		//printf("the current element's value: %d\n", current_element->value);
-		if (current->value > current->next->value)
-			return (0);
+		//printf("the next value to check: %d\n", current->next->value);
+		if (current->index > max)
+			max = current->index;
 		current = current->next;
 	}
-	return (1);
+	printf("the max index in the set: %d\n", max);
+	return (max);
 }
+
+*/

@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/21 10:56:58 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/22 11:51:27 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,6 @@ int	index_stack(t_stack **a)
 		else
 			head = head->next;
 	}
-	
-	// print the indexed list
-	head = *a;
-	printf("-----------the stack a after creating an index in ascending order -----------\n");
-	while (head)
-	{
-		printf("%d\t, index: %d\n", head->value, head->index);
-		//printf("the address of the next node: %p\n", head->next);
-		head = head->next;
-	}
-	printf("\n");
 	return (1);
 }
 // de functie sprint direct naar de volgende node ipv eerst node na het zoeken van een nieuw min!! 

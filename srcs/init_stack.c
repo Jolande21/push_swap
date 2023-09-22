@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/19 18:57:30 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/22 11:50:33 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_stack	*init_stack(int ac, char **av)
 
 			// create a new element to store in the stack
 			new = ft_create_list_element(number);
-			printf("newly created element: %d\n", new->value);
+			//printf("newly created element: %d\n", new->value);
 
 			// add the newly created element to the list
 			ft_add_element_end(&a, new);
@@ -53,8 +53,8 @@ t_stack	*init_stack(int ac, char **av)
 
 			// create a new element to store in the stack
 			new = ft_create_list_element(number);
-			printf("newly created element: %d\t", new->value);
-			printf("the address: %p\n", new);
+			//printf("newly created element: %d\t", new->value);
+			//printf("the address: %p\n", new);
 
 			// add the newly created element to the list
 			ft_add_element_end(&a, new);

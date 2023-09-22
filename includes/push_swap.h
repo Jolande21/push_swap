@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/20 15:59:40 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/22 11:34:10 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,20 @@ void	ft_rr(t_stack **a, t_stack **b);
 void	ft_rrr(t_stack **a, t_stack **b);
 
 // radix functions
-// int	get_maximum(t_stack *a);
+
 
 // index functions
 int	index_stack(t_stack **a);
 
 // conversion index to binary 
-void	binary_index(t_stack *a);
+void			binary_index(t_stack *a);
+unsigned int	int_to_bin(unsigned int nbr);
 
 // store binary index in char array
 void	init_bin_array(t_stack *head);
-void	push(t_stack *a);
+void	push(t_stack *a, int max_bits);
+
+// print stack function - in radix.c file
+void	print_stack(t_stack *stack);
 
 #endif

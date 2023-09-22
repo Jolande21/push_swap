@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/22 11:54:06 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/22 15:58:38 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	print_stack(t_stack *stack)
 	current = stack;
 	while (current)
 	{
-		printf("value: %d\t index: %d\t bin_index: %d\t array: %s\n", current->value, current->index, current->index_bin, current->bin_array);
+		printf("value: %d\t index: %d\t bin_index: %d\n", current->value, current->index, current->index_bin);
 		current = current->next;
 	}
 	printf("\n");
@@ -49,48 +49,54 @@ void	init_bin_array(t_stack *head)
 	t_stack	*current;
 	int		max_bits;
 	int		max_index;
+	int		max_index_bin;
 	
-	// count the number of bits in the max index
-	current = head;
-	//printf("----------------the binary array created:-------------------\n");
-	while (current)
-	{
-		current->bin_array = ft_itoa(current->index_bin);
-		current = current->next;
-	}
-	//print_stack(head);
-
-	// get the size of the list
-	//printf("start init_bin_array OK\n");
+	// look for the max index = the size of the list - 1 
 	max_index = list_size(head) - 1;
-	//printf("the max index in stack a: %d\n", max_index);
 
 	// count the number of bits in the max index
 	max_bits = 0;
+	max_index_bin = 0;
 	current = head;
 	while (current)
 	{
 		if (current->index == max_index)
-			max_bits = ft_strlen(current->bin_array);
+		{
+			max_index_bin = current->index_bin;
+			while (max_index_bin > 0)
+			{
+				max_bits++;
+				max_index = max_index>>1;
+				max_index_bin = int_to_bin(max_index);
+			}
+		}
 		current = current->next;
 	}
-	//printf("the max number of bits to check: %d\n", max_bits);
+	printf("the max_bits: %d\n", max_bits);
 	
 	// push the elements from stack a to be
-	push(head, max_bits);
+	sort_big_list(head, max_bits);
 }
 
 
-void	push(t_stack *a, int max_bits)
+//printf("the max index: %d\n", max_index);
+//printf("the max index bin: %d\n", max_index_bin);
+//printf("the max_bits: %d\n", max_bits);
+//printf("the new max_index_bin: %d\n", max_index_bin);
+//printf("start init_bin_array OK\n");
+//printf("the max index in stack a: %d\n", max_index);
+
+void	sort_big_list(t_stack *a, int max_bits)
 {
 	t_stack	*b;
 	t_stack *current;
 	int		max_index;
 	int		i;
-	//int		check;
+	int		size;
 
-	//printf("----------------the push function:-------------------\n");	
+	printf("----------------the push function:-------------------\n");	
 	
+	size = list_size(a);
 	b = NULL;
 	i = 0;
 	while (i < max_bits)
@@ -105,39 +111,41 @@ void	push(t_stack *a, int max_bits)
 				current = current->next;
 			}
 		}
-		// printf("--the stack a after moving bit i:---\n");
-		// print_stack(a);
-		max_index = list_size(a);
+		max_index = size;
 		while (max_index)
 		{
 			if ((a->index_bin) % 10 == 0)
 			{
 				ft_pb(&a, &b);
-				write(1,"pb\n", 3);
+				//write(1,"pb\n", 3);
 			}
 			else
 			{
 				ft_ra(&a);
-				write(1,"ra\n", 3);
+				//write(1,"ra\n", 3);
 			}
 			max_index--;
 		}
-		// printf("the stacks after the inner while loop:\n");
-		// print_stack(b);
-		// print_stack(a);
 		while (b)
 		{
 			ft_pa(&a, &b);
-			write(1, "pa\n", 3);
+			//write(1, "pa\n", 3);
 		}
-		// printf("the stacks after pushing everything to a again:\n");
-		// print_stack(b);
-		// print_stack(a);
 		i++;
 	}
+	print_stack(a);
+}
+
+		// printf("--the stack a after moving bit i:---\n");
+		// print_stack(a);
 	// check = ft_is_sorted(a);
 	// if (!check)
 	// 	printf("the stack is sorted!");
 	// else
 	// 	printf("the stack is not sorted!!");
-}
+	// printf("the stacks after the inner while loop:\n");
+	// print_stack(b);
+	// print_stack(a);
+	// print_stack(b);
+	// printf("the stacks after pushing everything to a again:\n");
+	// print_stack(a);

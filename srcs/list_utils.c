@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:56:54 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/20 11:21:11 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/22 15:17:54 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ t_stack	*ft_create_list_element(int number)
 	new_element->value = number;
 	new_element->index = -1;
 	new_element->index_bin = 0;
-	new_element->bin_array = NULL;
 	new_element->next = NULL;
 	return (new_element);
 }

@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/22 11:34:10 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/09/22 15:43:16 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_stack
 	int				value;
 	int				index;
 	unsigned int	index_bin;
-	char			*bin_array;
 	struct s_stack	*next;
 } t_stack;
 
@@ -71,7 +70,7 @@ unsigned int	int_to_bin(unsigned int nbr);
 
 // store binary index in char array
 void	init_bin_array(t_stack *head);
-void	push(t_stack *a, int max_bits);
+void	sort_big_list(t_stack *a, int max_bits);
 
 // print stack function - in radix.c file
 void	print_stack(t_stack *stack);

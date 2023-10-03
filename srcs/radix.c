@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/22 15:58:38 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/03 15:58:39 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,6 @@ this function will convert the int binary index into a char array
 this array stores the binary of index 
 */
 
-void	print_stack(t_stack *stack)
-{
-	t_stack	*current;
-
-	current = stack;
-	while (current)
-	{
-		printf("value: %d\t index: %d\t bin_index: %d\n", current->value, current->index, current->index_bin);
-		current = current->next;
-	}
-	printf("\n");
-}
 
 void	init_bin_array(t_stack *head)
 {
@@ -74,17 +62,9 @@ void	init_bin_array(t_stack *head)
 	}
 	printf("the max_bits: %d\n", max_bits);
 	
-	// push the elements from stack a to be
+	// push the elements from stack a to b
 	sort_big_list(head, max_bits);
 }
-
-
-//printf("the max index: %d\n", max_index);
-//printf("the max index bin: %d\n", max_index_bin);
-//printf("the max_bits: %d\n", max_bits);
-//printf("the new max_index_bin: %d\n", max_index_bin);
-//printf("start init_bin_array OK\n");
-//printf("the max index in stack a: %d\n", max_index);
 
 void	sort_big_list(t_stack *a, int max_bits)
 {
@@ -94,7 +74,7 @@ void	sort_big_list(t_stack *a, int max_bits)
 	int		i;
 	int		size;
 
-	printf("----------------the push function:-------------------\n");	
+	printf("-------------------------the push function:-------------------------\n");	
 	
 	size = list_size(a);
 	b = NULL;
@@ -117,24 +97,32 @@ void	sort_big_list(t_stack *a, int max_bits)
 			if ((a->index_bin) % 10 == 0)
 			{
 				ft_pb(&a, &b);
-				//write(1,"pb\n", 3);
+				write(1,"pb\n", 3);
 			}
 			else
 			{
 				ft_ra(&a);
-				//write(1,"ra\n", 3);
+				write(1,"ra\n", 3);
 			}
 			max_index--;
 		}
 		while (b)
 		{
 			ft_pa(&a, &b);
-			//write(1, "pa\n", 3);
+			write(1, "pa\n", 3);
 		}
 		i++;
 	}
 	print_stack(a);
 }
+
+
+//printf("the max index: %d\n", max_index);
+//printf("the max index bin: %d\n", max_index_bin);
+//printf("the max_bits: %d\n", max_bits);
+//printf("the new max_index_bin: %d\n", max_index_bin);
+//printf("start init_bin_array OK\n");
+//printf("the max index in stack a: %d\n", max_index);
 
 		// printf("--the stack a after moving bit i:---\n");
 		// print_stack(a);

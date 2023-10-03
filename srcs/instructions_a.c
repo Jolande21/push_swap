@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:35:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/21 15:55:59 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/03 13:50:06 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_ra(t_stack **a)
 		return ;
 	temp = *a; // 6810
 	*a = (*a)->next; // 6830
-	last_node = ft_last_list(*a); //68f0 
+	last_node = ft_last_element_list(*a); //68f0 
 	last_node->next = temp; // 6810
 	temp->next = NULL; 
 }

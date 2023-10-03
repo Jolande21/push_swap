@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/22 17:05:18 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/03 13:53:23 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack *a;
+	t_stack	*a;
 	t_stack	*head;
 	int		check;
 	
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 	print_stack(head);
 
 	// check the size of the list
-	printf("----------------------the size of the list:--------------------------\n");
+	printf("----------------------the size of the list:-------------------------\n");
 	int		size;
 	size = list_size(a);
 	printf("the number of elements in stack a: %d\n", size);

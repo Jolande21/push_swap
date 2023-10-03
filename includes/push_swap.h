@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/09/22 15:43:16 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/03 13:50:06 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	ft_is_sorted(t_stack *a);
 int	list_size(t_stack *a);
 
 // list utils
-t_stack	*ft_last_list(t_stack *a);
+t_stack	*ft_last_element_list(t_stack *a);
 t_stack	*ft_create_list_element(int number);
-void	ft_add_element_end(t_stack **a, t_stack *new_element);
+void	ft_add_element_list_end(t_stack **a, t_stack *new_element);
 
 
 // instructions 

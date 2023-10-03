@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:39:55 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/22 11:41:54 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/03 13:50:06 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_rb(t_stack **b)
 		return ;
 	temp = *b;
 	*b = (*b)->next;
-	last_node = ft_last_list(*b);
+	last_node = ft_last_element_list(*b);
 	last_node->next = temp;
 	temp->next = NULL;	
 }

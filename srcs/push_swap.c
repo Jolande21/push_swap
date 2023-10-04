@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/04 12:37:26 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/04 18:25:50 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int	main(int argc, char **argv)
 			sort_small_list(&a, size);
 		else
 			sort_big_list(a);
-		print_stack(a);
 	}
 	else
 	{

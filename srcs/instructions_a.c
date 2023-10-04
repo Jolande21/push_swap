@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:35:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/04 16:43:16 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/04 18:32:41 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,8 @@ void	ft_rra(t_stack **a)
 
 	i = 0;
 	temp = *a; // 5850
-	printf("ft_rra: address stored in a: %p\n", *a);
 	while ((*a)->next)
 	{
-		printf("%i\n", i);
 		*a = (*a)->next; // 5820
 		i++;
 	}

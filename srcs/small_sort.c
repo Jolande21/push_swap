@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:05:28 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/04 18:36:57 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/04 19:00:02 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,41 @@ static int	get_min_index(t_stack *a)
 	}
 	printf("the min in the small sort function: %d\n", min);
 	return (min);
+}
+
+static void	sort_4(t_stack **a, int size)
+{
+	t_stack *current;
+	int	max;
+	int i;
+	
+	max = size - 1;
+	current = *a;
+	i = 0;
+	while (current)
+	{
+		if (current->index == max)
+			break ;
+		i++;
+	}
+	// ik heb geen stack b aangemaakt
+	if (i == 0)
+		ft_pb();
+	else if (i == 1)
+	{
+		ft_ra
+		ft_pb
+	}
+	else if (i == 2)
+	{
+		ft_ra(a);
+		ft_ra(a); 
+		ft_pb();
+	}
+	sort_3(a);
+	ft_pa(a);
+	ft_ra(a);
+	print_stack(*a);
 }
 
 static void	sort_3(t_stack **a)
@@ -79,7 +114,10 @@ void	sort_small_list(t_stack **a, int size)
 		sort_3(a);
 	}
 	else if (size == 4)
+	{
 		printf("the size of the list is %d\n", size);
+		sort_4(a, size);
+	}
 	else if(size == 5)
 		printf("the size of the list is %d\n", size);
 	print_stack(*a);

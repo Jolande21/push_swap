@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/03 13:50:06 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/04 11:48:56 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ t_stack	*init_stack(int argc, char **argv);
 int	ft_is_sorted(t_stack *a);
 int	list_size(t_stack *a);
 
-// list utils
+// linked lists useful functions
 t_stack	*ft_last_element_list(t_stack *a);
 t_stack	*ft_create_list_element(int number);
 void	ft_add_element_list_end(t_stack **a, t_stack *new_element);
-
+void	print_stack(t_stack *stack);
 
 // instructions 
 void	ft_sa(t_stack **a);
@@ -58,21 +58,19 @@ void	ft_ss(t_stack **a, t_stack **b);
 void	ft_rr(t_stack **a, t_stack **b);
 void	ft_rrr(t_stack **a, t_stack **b);
 
-// radix functions
 
-
-// index functions
+// function to create an index of the elements in the linked list
 int	index_stack(t_stack **a);
 
 // conversion index to binary 
 void			binary_index(t_stack *a);
 unsigned int	int_to_bin(unsigned int nbr);
 
-// store binary index in char array
-void	init_bin_array(t_stack *head);
-void	sort_big_list(t_stack *a, int max_bits);
+// radix functions
+void	sort_big_list(t_stack *head);
+void	radix(t_stack *a, int max_bits);
 
-// print stack function - in radix.c file
-void	print_stack(t_stack *stack);
+// functions to sort a small list
+void	sort_small_list(t_stack **a, int size);
 
 #endif

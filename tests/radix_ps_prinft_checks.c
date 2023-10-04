@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   radix_ps_prinft_checks.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/09/21 16:20:20 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/04 11:25:19 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ this function will convert the int binary index into a char array
 this array stores the binary of index 
 */
 
-void	init_bin_array(t_stack *head)
+void	sort_big_list(t_stack *head)
 {
 	t_stack	*current;
 	int		max_bits;

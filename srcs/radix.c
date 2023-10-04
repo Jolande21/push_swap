@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/03 15:58:39 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/04 11:25:19 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ this array stores the binary of index
 */
 
 
-void	init_bin_array(t_stack *head)
+void	sort_big_list(t_stack *head)
 {
 	t_stack	*current;
 	int		max_bits;
@@ -63,10 +63,10 @@ void	init_bin_array(t_stack *head)
 	printf("the max_bits: %d\n", max_bits);
 	
 	// push the elements from stack a to b
-	sort_big_list(head, max_bits);
+	radix(head, max_bits);
 }
 
-void	sort_big_list(t_stack *a, int max_bits)
+void	radix(t_stack *a, int max_bits)
 {
 	t_stack	*b;
 	t_stack *current;
@@ -74,7 +74,7 @@ void	sort_big_list(t_stack *a, int max_bits)
 	int		i;
 	int		size;
 
-	printf("-------------------------the push function:-------------------------\n");	
+	printf("------------------------- radix function: --------------------------\n");	
 	
 	size = list_size(a);
 	b = NULL;

@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/03 13:53:23 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/04 12:37:26 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	t_stack	*head;
+	t_stack	*head; // only used to print the stack 
 	int		check;
 	
 	if (argc < 2)
@@ -38,7 +38,8 @@ int	main(int argc, char **argv)
 	size = list_size(a);
 	printf("the number of elements in stack a: %d\n", size);
 
-	// if the list is not sorted
+	// check if list is sorted or not
+	// if not sorted, check the size of the list
 	if (!ft_is_sorted(a))
 	{
 		// print message
@@ -51,22 +52,21 @@ int	main(int argc, char **argv)
 			printf("no indexation so the program stops here.\n");
 			return (-1);
 		}
+
+		// convert created index to an int binary index
+		binary_index(a);
+
+		// sort the list based on the number of ints in the list = size
+		if (size <= 5)
+			sort_small_list(&a, size);
 		else
-		{
-			// convert index to int binary
-			binary_index(a);
-
-			// store the bin index in char array
-			init_bin_array(a); 
-		}	
-
-		// sort based on the size of the list 
-		// if (size <= 5)
-		// 	printf("This is a small array sort");
-		// else
-		// 	ft_sort(&a);
+			sort_big_list(a);
+		print_stack(a);
 	}
 	else
+	{
 		printf("the stack is sorted!!\n");
+		exit(EXIT_FAILURE);
+	}
 	return (0); 
 }

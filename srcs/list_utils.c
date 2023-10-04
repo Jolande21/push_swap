@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:56:54 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/03 15:34:36 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/04 11:07:01 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_stack	*ft_create_list_element(int number)
 	return (new_element);
 }
 
-// print the created stack/linked list
+// print values stored in the created stack/linked list
 
 void	print_stack(t_stack *stack)
 {

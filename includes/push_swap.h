@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/04 11:48:56 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/05 16:57:42 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ void	radix(t_stack *a, int max_bits);
 
 // functions to sort a small list
 void	sort_small_list(t_stack **a, int size);
+void	sort_3(t_stack **a);
+void	sort_4(t_stack **a, t_stack **b);
 
 #endif

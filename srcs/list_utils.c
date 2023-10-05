@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:56:54 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/04 11:07:01 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/05 17:35:52 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	print_stack(t_stack *stack)
 	current = stack;
 	while (current)
 	{
-		printf("value: %d\t index: %d\t bin_index: %d\n", current->value, current->index, current->index_bin);
+		printf("value: %d\t index: %d\t address next: %p\n", current->value, current->index, current->next);
 		current = current->next;
 	}
 	printf("\n");

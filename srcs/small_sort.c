@@ -6,11 +6,29 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:05:28 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/04 19:00:02 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/05 17:21:54 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	max_index_position(t_stack **a, int size)
+{
+	t_stack	*current;
+	int		position;
+
+	position = 0;
+	current = *a;
+	while (position < size)
+	{
+		printf("the current->index: %d\n", current->index);
+		if (current->index == (size - 1))
+			break;
+		position++;
+		current = current->next;
+	}
+	return (position);
+}
 
 static int	get_min_index(t_stack *a)
 {
@@ -25,49 +43,71 @@ static int	get_min_index(t_stack *a)
 			min = current->index;
 		current = current->next;
 	}
-	printf("the min in the small sort function: %d\n", min);
+	//printf("the min value in the small sort function: %d\n", min);
 	return (min);
 }
 
-static void	sort_4(t_stack **a, int size)
+void	sort_5(t_stack **a, t_stack **b)
 {
-	t_stack *current;
-	int	max;
-	int i;
-	
-	max = size - 1;
-	current = *a;
-	i = 0;
-	while (current)
+	int	position;
+
+	position = max_index_position(a, 5);
+	printf("the position value in sort_5: %d\n", position);
+	if (position == 1)
+		ft_ra(a);
+	else if (position == 2)
 	{
-		if (current->index == max)
-			break ;
-		i++;
+		ft_ra(a);
+		ft_ra(a);
 	}
-	// ik heb geen stack b aangemaakt
-	if (i == 0)
-		ft_pb();
-	else if (i == 1)
+	else if (position == 3)
 	{
-		ft_ra
-		ft_pb
+		ft_rra(a);
+		ft_rra(a);
 	}
-	else if (i == 2)
+	else if (position == 4)
+		ft_rra(a);
+	ft_pb(a, b);
+	sort_4(a, b);
+	ft_pa(a, b);
+	ft_ra(a);
+}
+
+void	sort_4(t_stack **a, t_stack **b)
+{
+	int		position;
+
+	position = max_index_position(a, 4);
+	printf("the position value in sort_4: %d\n", position);
+	if (position == 0 && ft_is_sorted(*a))
+	{
+		ft_ra(a);
+		return ;
+	}
+	if (position == 1)
+		ft_ra(a);
+	else if (position == 2)
 	{
 		ft_ra(a);
 		ft_ra(a); 
-		ft_pb();
 	}
-	sort_3(a);
-	ft_pa(a);
-	ft_ra(a);
+	else if (position == 3)
+		ft_rra(a);
+	ft_pb(a, b);
+	print_stack(*b);
 	print_stack(*a);
+	sort_3(a);
+	ft_pa(a, b);
+	ft_ra(a);
 }
 
-static void	sort_3(t_stack **a)
+void	sort_3(t_stack **a)
 {
 	int		min;
 	
+	printf("the address of the head: %p\t and the value: %d\n", *a, (*a)->value);
+	if (ft_is_sorted(*a))
+		return ;
 	min = get_min_index(*a);
 	if ((*a)->index < (*a)->next->index && (*a)->index == min)
 	{
@@ -76,49 +116,33 @@ static void	sort_3(t_stack **a)
 		ft_rra(a);
 	}
 	else if ((*a)->index < (*a)->next->index)
-	{
 		ft_rra(a);
-		//printf("ft_rra\n");
-	}
 	else if ((*a)->next->index == min)
 	{
 		if ((*a)->index == (*a)->next->index + 1)
-		{
 			ft_sa(a);
-			//printf("ft_sa\n");
-		}
 		else
-		{	
 			ft_ra(a);
-			//printf("ft_ra\n");
-		}
 	}
 	else
 	{
 		ft_sa(a);
 		ft_rra(a);
-		//printf("ft_sa && ft_rra\n");
 	}
 }
+
 void	sort_small_list(t_stack **a, int size)
 {
+	t_stack	*b;
+
+	b = NULL;
 	if (size == 2)
-	{
-		printf("the size of the list is %d\n", size);
 		ft_sa(a);
-		write(1, "sa\n", 2);
-	}
 	else if (size == 3)
-	{
-		printf("the size of the list is %d\n", size);
 		sort_3(a);
-	}
 	else if (size == 4)
-	{
-		printf("the size of the list is %d\n", size);
-		sort_4(a, size);
-	}
+		sort_4(a, &b);
 	else if(size == 5)
-		printf("the size of the list is %d\n", size);
+		sort_5(a, &b);
 	print_stack(*a);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/04 18:25:50 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/05 16:48:00 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	t_stack	*head; // only used to print the stack 
+	//t_stack	*head; // only used to print the stack 
 	int		check;
 	
 	if (argc < 2)
@@ -25,25 +25,25 @@ int	main(int argc, char **argv)
 	a = init_stack(argc, argv);
 	if (!a)
 		return (-1);
-	printf("the stack is created!\n");
+	//printf("the stack is created!\n");
 
 	// print the elements of the stack; the values and the initial index
-	head = a;
-	printf("----------------------the linked list in main:----------------------\n");
-	print_stack(head);
+	//head = a;
+	//printf("----------------------the linked list in main:----------------------\n");
+	//print_stack(head);
 
 	// check the size of the list
-	printf("----------------------the size of the list:-------------------------\n");
+	//printf("----------------------the size of the list:-------------------------\n");
 	int		size;
 	size = list_size(a);
-	printf("the number of elements in stack a: %d\n", size);
+	//printf("the number of elements in stack a: %d\n", size);
 
 	// check if list is sorted or not
 	// if not sorted, check the size of the list
 	if (!ft_is_sorted(a))
 	{
 		// print message
-		printf("the stack is not sorted.\n");
+		//printf("the stack is not sorted.\n");
 
 		// create an index of the int set in ascending order
 		check = index_stack(&a);
@@ -53,14 +53,16 @@ int	main(int argc, char **argv)
 			return (-1);
 		}
 
-		// convert created index to an int binary index
-		binary_index(a);
-
 		// sort the list based on the number of ints in the list = size
 		if (size <= 5)
 			sort_small_list(&a, size);
 		else
-			sort_big_list(a);
+		{
+			// convert created index to an int binary index
+			binary_index(a);
+			// sort the created binary index
+			sort_big_list(a);			
+		}
 	}
 	else
 	{

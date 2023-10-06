@@ -6,19 +6,19 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/05 17:36:55 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/06 12:16:13 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_is_sorted(t_stack *a)
+int	is_sorted(t_stack **a)
 {
 	t_stack	*current;
 
-	current = a;
+	current = *a;
 	printf("the address of the first node: %p\n", current);
-	while (current)
+	while (current && current->next)
 	{
 		// check if the value (number) of the current element of the list
 		// if it is greater than the value of the next number

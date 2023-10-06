@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:05:28 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/05 17:21:54 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/06 12:17:18 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	sort_4(t_stack **a, t_stack **b)
 
 	position = max_index_position(a, 4);
 	printf("the position value in sort_4: %d\n", position);
-	if (position == 0 && ft_is_sorted(*a))
+	if (position == 0 && is_sorted(a))
 	{
 		ft_ra(a);
 		return ;
@@ -106,7 +106,7 @@ void	sort_3(t_stack **a)
 	int		min;
 	
 	printf("the address of the head: %p\t and the value: %d\n", *a, (*a)->value);
-	if (ft_is_sorted(*a))
+	if (is_sorted(a))
 		return ;
 	min = get_min_index(*a);
 	if ((*a)->index < (*a)->next->index && (*a)->index == min)

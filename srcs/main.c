@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/05 16:48:00 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/06 12:18:21 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 
 	// check if list is sorted or not
 	// if not sorted, check the size of the list
-	if (!ft_is_sorted(a))
+	if (!is_sorted(&a))
 	{
 		// print message
 		//printf("the stack is not sorted.\n");

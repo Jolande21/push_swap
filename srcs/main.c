@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/06 12:24:06 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/09 12:20:50 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 			// convert created index to an int binary index
 			binary_index(a);
 			// sort the created binary index
-			sort_big_list(a);			
+			sort_big_list(a);
 		}
 	}
 	else

@@ -6,11 +6,28 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:56:54 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/05 17:35:52 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/09 12:24:25 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+// returns the size of the list (the number of nodes created)
+
+int	list_size(t_stack *a)
+{
+	int	count;
+
+	count = 0;
+	//printf("list_size: the address of 1st node: %p\n", a);
+	while (a)
+	{
+		count++;
+		a = a->next;
+		//printf("list_size: the address of the next node: %p\n", a);
+	}
+	return (count);
+}
 
 // returns the last element of the list
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/04 11:25:19 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/09 16:19:28 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	sort_big_list(t_stack *head)
 		}
 		current = current->next;
 	}
-	printf("the max_bits: %d\n", max_bits);
+	//printf("the max_bits: %d\n", max_bits);
 	
 	// push the elements from stack a to b
 	radix(head, max_bits);
@@ -74,7 +74,7 @@ void	radix(t_stack *a, int max_bits)
 	int		i;
 	int		size;
 
-	printf("------------------------- radix function: --------------------------\n");	
+	//printf("------------------------- radix function: --------------------------\n");	
 	
 	size = list_size(a);
 	b = NULL;
@@ -113,7 +113,7 @@ void	radix(t_stack *a, int max_bits)
 		}
 		i++;
 	}
-	print_stack(a);
+	//print_stack(a);
 }
 
 

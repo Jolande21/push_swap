@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:51:10 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/03 15:36:16 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/06 12:26:16 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	binary_index(t_stack *a)
 {
 	t_stack			*current;
 
-	printf("----------------stack a after creating binary index:----------------\n");
+	//printf("----------------stack a after creating binary index:----------------\n");
 	// update the binary index
     // what about the int type -> check unsigned or just int?
 	current = a;
@@ -42,5 +42,5 @@ void	binary_index(t_stack *a)
 		current->index_bin = int_to_bin(current->index);
 		current = current->next;
 	}
-	print_stack(a);
+	//print_stack(a);
 }

@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:05:28 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/06 12:17:18 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/06 12:27:08 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	max_index_position(t_stack **a, int size)
 	current = *a;
 	while (position < size)
 	{
-		printf("the current->index: %d\n", current->index);
+		//printf("the current->index: %d\n", current->index);
 		if (current->index == (size - 1))
 			break;
 		position++;
@@ -52,7 +52,7 @@ void	sort_5(t_stack **a, t_stack **b)
 	int	position;
 
 	position = max_index_position(a, 5);
-	printf("the position value in sort_5: %d\n", position);
+	//printf("the position value in sort_5: %d\n", position);
 	if (position == 1)
 		ft_ra(a);
 	else if (position == 2)
@@ -78,7 +78,7 @@ void	sort_4(t_stack **a, t_stack **b)
 	int		position;
 
 	position = max_index_position(a, 4);
-	printf("the position value in sort_4: %d\n", position);
+	//printf("the position value in sort_4: %d\n", position);
 	if (position == 0 && is_sorted(a))
 	{
 		ft_ra(a);
@@ -94,8 +94,8 @@ void	sort_4(t_stack **a, t_stack **b)
 	else if (position == 3)
 		ft_rra(a);
 	ft_pb(a, b);
-	print_stack(*b);
-	print_stack(*a);
+	//print_stack(*b);
+	//print_stack(*a);
 	sort_3(a);
 	ft_pa(a, b);
 	ft_ra(a);
@@ -105,7 +105,7 @@ void	sort_3(t_stack **a)
 {
 	int		min;
 	
-	printf("the address of the head: %p\t and the value: %d\n", *a, (*a)->value);
+	//printf("the address of the head: %p\t and the value: %d\n", *a, (*a)->value);
 	if (is_sorted(a))
 		return ;
 	min = get_min_index(*a);
@@ -144,5 +144,5 @@ void	sort_small_list(t_stack **a, int size)
 		sort_4(a, &b);
 	else if(size == 5)
 		sort_5(a, &b);
-	print_stack(*a);
+	//print_stack(*a);
 }

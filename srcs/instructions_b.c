@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:39:55 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/05 16:51:00 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/06 12:24:22 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,8 @@ void	ft_pb(t_stack **a, t_stack **b)
 	if (!*a)
 		return ;
 	temp = *b;
-	//printf("pb: the start address of b: \t%p\n", *b);
 	*b = *a;
-	//printf("pb: the new address of b: \t%p\n", *b);
-	//printf("pb: the start address of a: \t%p\n", *a);
 	*a = (*a)->next;
-	//printf("pb: the new address of a: \t%p\n", *a);
 	(*b)->next = temp;
 	write(1, "pb\n", 3);
 }

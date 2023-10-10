@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_index.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/09 12:19:21 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/10 14:46:15 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	get_minimum(t_stack **a)
 
 // this function creates an index of the set of values provided as args
 
-int	index_stack(t_stack **a)
+int	init_index_stack(t_stack **a)
 {
 	t_stack			*head;
 	unsigned int	index;

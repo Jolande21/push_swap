@@ -6,11 +6,12 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/10 12:58:13 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:52:46 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
 
 int	is_sorted(t_stack **a)
 {
@@ -32,7 +33,6 @@ int	is_sorted(t_stack **a)
 	return (1);
 }
 
-// check the size of the list
 int	list_checks(t_stack **a)
 {
 	int	size;
@@ -40,40 +40,10 @@ int	list_checks(t_stack **a)
 	//printf("----------------------the size of the list:-------------------------\n");
 	size = list_size(*a);
 	if (size == 1)
-		ft_error("the ")
-	// {
-	// 	write(1, "Error\n", 6);
-	// 	exit(1);
-	// }
-	
-	// check if the set of int values, is sorted
-	if (!is_sorted(a))
-	{
-		//printf("the stack is not sorted.\n");
-		// create an index of the int set in ascending order
-		if (!index_stack(a))
-		{
-			printf("no indexation so the program stops here.\n");
-			exit(1);
-		}
-
-		// sort the list based on the number of ints in the list = size
-		if (size <= 5)
-			sort_small_list(a, size);
-		else
-		{
-			// convert created index to an int binary index
-			binary_index(*a);
-			// sort the created binary index
-			sort_big_list(*a);
-		}
-	}
-	else
-	{
-		printf("the stack is sorted!\n");
-		exit(1);
-	}
-	return (0);
+		ft_error("there is only one int given as argument.");
+	if (is_sorted(a))
+		ft_error("the stack is already sorted.");
+	return (1);
 }
 
 

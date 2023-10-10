@@ -6,18 +6,33 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 11:28:30 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/10 11:42:08 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:52:12 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "../libft/libft.h"
 
-void	ft_error(void)
+void	ft_error(char *s)
 {
-	write(1, "Error\n", 6);
+	printf("%s\n", s);
 	exit(1);
 }
+
+int duplicate(int num, char **args, int position)
+{
+	int	i;
+
+	i = 0;
+	while (args[i])
+	{
+		if (num == ft_atoi(args[i]) && i != position)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 
 int	ft_is_num(char *num)
 {
@@ -70,6 +85,8 @@ int	main(int argc, char **argv)
 		}
 		number = ft_atoi(args[i]);
 		printf("%d\n", number);
+		if (duplicate(number, args, i))
+			ft_error("the are duplicates.");
 		i++;
 	}
 	// I need to free on 2 levels??

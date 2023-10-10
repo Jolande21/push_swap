@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/10 12:49:23 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 14:46:15 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_rrr(t_stack **a, t_stack **b);
 
 
 // function to create an index of the elements in the linked list
-int	index_stack(t_stack **a);
+int	init_index_stack(t_stack **a);
 
 // conversion index to binary 
 void			binary_index(t_stack *a);

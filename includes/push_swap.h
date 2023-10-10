@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/09 17:43:18 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 12:49:23 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ t_stack	*init_stack(int argc, char **argv);
 
 // checks to be done on the created stack/list a
 int	is_sorted(t_stack **a);
-int	checks(t_stack **a);
+int	list_checks(t_stack **a);
+int	ft_check_args(int argc, char **argv);
 
 // utils for linked lists
 int		list_size(t_stack *a);
@@ -48,7 +49,7 @@ void	print_stack(t_stack *stack);
 
 
 // utils for other functionalities
-int	ft_error(void);
+void	ft_error(char *message);
 
 // instructions 
 void	ft_sa(t_stack **a);
@@ -71,7 +72,7 @@ int	index_stack(t_stack **a);
 void			binary_index(t_stack *a);
 unsigned int	int_to_bin(unsigned int nbr);
 
-// radix functions
+// functions to sort a big list
 void	sort_big_list(t_stack *head);
 void	radix(t_stack *a, int max_bits);
 

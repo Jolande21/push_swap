@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   checks_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/09 17:43:47 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 12:58:13 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,25 @@ int	is_sorted(t_stack **a)
 }
 
 // check the size of the list
-int	checks(t_stack **a)
+int	list_checks(t_stack **a)
 {
 	int	size;
-	int	check;
 
 	//printf("----------------------the size of the list:-------------------------\n");
 	size = list_size(*a);
 	if (size == 1)
-	{
-		write(1, "Error\n", 6);
-		exit(1);
-	}
+		ft_error("the ")
+	// {
+	// 	write(1, "Error\n", 6);
+	// 	exit(1);
+	// }
 	
 	// check if the set of int values, is sorted
 	if (!is_sorted(a))
 	{
 		//printf("the stack is not sorted.\n");
 		// create an index of the int set in ascending order
-		check = index_stack(a);
-		if (!check)
+		if (!index_stack(a))
 		{
 			printf("no indexation so the program stops here.\n");
 			exit(1);
@@ -72,39 +71,11 @@ int	checks(t_stack **a)
 	else
 	{
 		printf("the stack is sorted!\n");
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 	return (0);
 }
 
-int	ft_check_args(int argc, char **argv)
-{
-	char	**args;
-	int		number;
-	int		i;
 
-	i = 0;
-	args = NULL;
-	if (ac == 2)
-	{
-		args = ft_split(av[1], ' ');
-		if (!args)
-			return (NULL);
-	}
-	else
-	{
-		i = 1;
-		args = av;
-	}
-	while (args[i])
-	{
-		// convert the ascii number stored in temp to an int 
-		number = ft_atoi(av[i]);
-		if (!ft_isdigit(args[i]))
-			ft_error;
-		i++;
-	}
-	return (a);
-}
 
 //printf("the number of elements in stack a: %d\n", size);

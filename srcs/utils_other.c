@@ -6,14 +6,23 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:40:38 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/09 17:42:31 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 12:28:43 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_error(void)
+void	ft_error(char *message)
 {
-	write(1, "Error\n", 6);
-	exit(1);
+	int	i;
+	
+	write(1, "Error ", 6);
+	i = 0;
+	while (message[i])
+	{
+		write(1, &message[i], 1);
+		i++;
+	}
+	write(1, "\n", 1);
+	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/10 15:52:46 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 17:30:40 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,12 @@ int	list_checks(t_stack **a)
 	//printf("----------------------the size of the list:-------------------------\n");
 	size = list_size(*a);
 	if (size == 1)
-		ft_error("there is only one int given as argument.");
+		exit(1);
 	if (is_sorted(a))
-		ft_error("the stack is already sorted.");
+	{
+		//ft_error("the stack is already sorted.");
+		exit(1);
+	}
 	return (1);
 }
 

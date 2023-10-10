@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:02:17 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/10 15:58:59 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 18:04:16 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ static int	duplicate(int number, char **args, int position)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (args[i])
 	{
-		if (ft_atoi(args[i]) == number && i != position)
-			return (0);
+		if ((ft_atoi(args[i]) == number) && (i != position))
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 static int	ft_is_num(char *num)
@@ -33,8 +33,11 @@ static int	ft_is_num(char *num)
 	i = 0;
 	if (num[0] == '-')
 		i++;
+	if (!num[i])
+		return (0);
 	while (num[i])
 	{
+		//printf("Ok\n");
 		if (!ft_isdigit(num[i]))
 			return (0);
 		i++;

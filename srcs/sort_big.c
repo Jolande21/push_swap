@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/09 16:19:28 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 18:01:13 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,19 +97,19 @@ void	radix(t_stack *a, int max_bits)
 			if ((a->index_bin) % 10 == 0)
 			{
 				ft_pb(&a, &b);
-				write(1,"pb\n", 3);
+				//write(1,"pb\n", 3);
 			}
 			else
 			{
 				ft_ra(&a);
-				write(1,"ra\n", 3);
+				//write(1,"ra\n", 3);
 			}
 			max_index--;
 		}
 		while (b)
 		{
 			ft_pa(&a, &b);
-			write(1, "pa\n", 3);
+			//write(1, "pa\n", 3);
 		}
 		i++;
 	}

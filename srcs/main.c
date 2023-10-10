@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/10 14:55:44 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/10 18:04:02 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	
 	if (argc < 2)
-		ft_error("please provide a set of ints.");
+		exit(1);
 	if (!ft_check_args(argc, argv))
 		exit(1);
+	printf("OK\n");
 	a = init_stack(argc, argv);
 	if (!a)
 		exit(1);
@@ -51,3 +52,4 @@ int	main(int argc, char **argv)
 //head = a;
 //printf("----------------------the linked list in main:----------------------\n");
 //print_stack(head);
+// printf("OK\n");

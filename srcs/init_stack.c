@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/10 18:05:37 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:49:20 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_stack	*init_stack(int ac, char **av)
 	a = NULL;
 	while (args[i])
 	{
-		printf("OK end\n");
+		//printf("OK end\n");
 		number = ft_atoi(av[i]);
 		new_element = ft_create_list_element(number);
 		if (!new_element)

@@ -6,53 +6,17 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:05:28 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/09 16:05:58 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:32:27 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	max_index_position(t_stack **a, int size)
-{
-	t_stack	*current;
-	int		position;
-
-	position = 0;
-	current = *a;
-	while (position < size)
-	{
-		//printf("the current->index: %d\n", current->index);
-		if (current->index == (size - 1))
-			break;
-		position++;
-		current = current->next;
-	}
-	return (position);
-}
-
-static int	get_min_index(t_stack *a)
-{
-	t_stack	*current;
-	int		min;
-
-	current = a;
-	min = INT_MAX;
-	while (current)
-	{
-		if (current->index < min)
-			min = current->index;
-		current = current->next;
-	}
-	//printf("the min value in the small sort function: %d\n", min);
-	return (min);
-}
-
 void	sort_5(t_stack **a, t_stack **b)
 {
 	int	position;
 
-	position = max_index_position(a, 5);
-	//printf("the position value in sort_5: %d\n", position);
+	position = get_max_index_position(a, 5);
 	if (position == 1)
 		ft_ra(a);
 	else if (position == 2)
@@ -77,8 +41,7 @@ void	sort_4(t_stack **a, t_stack **b)
 {
 	int		position;
 
-	position = max_index_position(a, 4);
-	//printf("the position value in sort_4: %d\n", position);
+	position = get_max_index_position(a, 4);
 	if (position == 0 && is_sorted(a))
 	{
 		ft_ra(a);
@@ -94,8 +57,6 @@ void	sort_4(t_stack **a, t_stack **b)
 	else if (position == 3)
 		ft_rra(a);
 	ft_pb(a, b);
-	//print_stack(*b);
-	//print_stack(*a);
 	sort_3(a);
 	ft_pa(a, b);
 	ft_ra(a);
@@ -105,7 +66,6 @@ void	sort_3(t_stack **a)
 {
 	int		min;
 	
-	//printf("the address of the head: %p\t and the value: %d\n", *a, (*a)->value);
 	if (is_sorted(a))
 		return ;
 	min = get_min_index(*a);
@@ -144,5 +104,4 @@ void	sort_small_list(t_stack **a, int size)
 		sort_4(a, &b);
 	else if(size == 5)
 		sort_5(a, &b);
-	//print_stack(*a);
 }

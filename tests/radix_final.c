@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_big.c                                         :+:      :+:    :+:   */
+/*   radix_final.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 16:09:05 by jsteenpu         ###   ########.fr       */
+/*   Created: 2023/10/12 16:01:37 by jsteenpu          #+#    #+#             */
+/*   Updated: 2023/10/12 16:02:41 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
 
 /*
 
@@ -100,39 +99,3 @@ void	radix(t_stack *a, int max_bits)
 		i++;
 	}
 }
-
-// void	radix(t_stack *a, int max_bits)
-// {
-// 	t_stack	*b;
-// 	t_stack *current;
-// 	int		i;
-// 	int		size;
-	
-// 	b = NULL;
-// 	i = 0;
-// 	while (i < max_bits)
-// 	{
-// 		if (i > 0)
-// 		{
-// 			current = a;
-// 			while (current)
-// 			{
-// 				current->index = current->index>>1;
-// 				current->index_bin = int_to_bin(current->index);
-// 				current = current->next;
-// 			}
-// 		}
-// 		size = list_size(a);
-// 		while (size) // check for every element of the list
-// 		{
-// 			if ((a->index_bin) % 10 == 0)
-// 				ft_pb(&a, &b);
-// 			else
-// 				ft_ra(&a);
-// 			size--;
-// 		}
-// 		while (b)
-// 			ft_pa(&a, &b);
-// 		i++;
-// 	}
-// }

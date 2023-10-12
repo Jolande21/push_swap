@@ -6,13 +6,14 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 13:42:16 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:42:50 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 // looks for the min int in the linked list a
+// if index has value -1; set the new minimum value at that index
 
 static int	get_minimum(t_stack **a)
 {
@@ -35,30 +36,30 @@ static int	get_minimum(t_stack **a)
 
 int	init_index_stack(t_stack **a)
 {
-	t_stack			*head;
+	t_stack			*current;
 	unsigned int	index;
 	int				min_value1;
 	int				min_value2;
 
-	head = *a;
+	current = *a;
 	index = -1;
 	min_value1 = get_minimum(a); 
 	min_value2  = min_value1; 
-	while (head)
+	while (current)
 	{
-		if (head->value == min_value1 && head->index == -1)
+		if (current->value == min_value1 && current->index == -1)
 		{
 			index++;
-			head->index = index;
+			current->index = index;
 			min_value2 = get_minimum(a);
 		}
 		if (min_value1 != min_value2)
 		{
-			head = *a;
+			current = *a;
 			min_value1 = min_value2;
 		}
 		else
-			head = head->next;
+			current = current->next;
 	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 13:40:58 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:37:05 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_stack
 
 /*---------------------------- FUNCTIONS ---------------------------------------*/
 
-// checks to be done on the args
+// checks to be done on the arguments
 int	check_args(int argc, char **argv);
 
 // initializes the linked list for stack a 
@@ -47,6 +47,9 @@ void	print_stack(t_stack *stack);
 
 // utils for other functionalities
 void	ft_error(char *message);
+int		get_max_index_position(t_stack **a, int size);
+int		get_min_index(t_stack *a);
+
 
 // instructions to sort stack a and stack b
 void	ft_sa(t_stack **a);
@@ -65,7 +68,7 @@ void	ft_rrr(t_stack **a, t_stack **b);
 // function to create an index of the elements in the linked list
 int	init_index_stack(t_stack **a);
 
-// conversion index to binary 
+// converts the created index to binary for the radix function 
 void			binary_index(t_stack *a);
 unsigned int	int_to_bin(unsigned int nbr);
 

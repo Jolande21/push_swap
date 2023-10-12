@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 16:42:39 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:24:04 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
-	unsigned int	index_bin;
 	struct s_stack	*next;
 } t_stack;
 
@@ -36,7 +35,7 @@ typedef struct s_stack
 int	check_args(int argc, char **argv);
 
 // initializes the linked list for stack a 
-t_stack	*init_stack(int argc, char **argv);
+int	init_stack(int argc, char **argv, t_stack **a);
 
 // utils for linked lists
 int		list_size(t_stack *a);
@@ -46,9 +45,10 @@ void	ft_add_element_list_end(t_stack **a, t_stack *new_element);
 void	print_stack(t_stack *stack);
 
 // utils for other functionalities
-void	ft_error(char *message);
-int		get_max_index_position(t_stack **a, int size);
-int		get_min_index(t_stack *a);
+void			ft_error(char *message);
+int				get_max_index_position(t_stack **a, int size);
+int				get_min_index(t_stack *a);
+unsigned int	int_to_bin(unsigned int nbr);
 
 
 // instructions to sort stack a and stack b
@@ -69,19 +69,18 @@ void	ft_rrr(t_stack **a, t_stack **b);
 int	init_index_stack(t_stack **a);
 
 // converts the created index to binary for the radix function 
-void			binary_index(t_stack *a);
-unsigned int	int_to_bin(unsigned int nbr);
+//void			binary_index(t_stack *a);
 
 // general sorting functions 
-void	init_sorting(t_stack **a);
+void	init_sorting(t_stack **a, t_stack **b);
 int		is_sorted(t_stack **a);
 
 // functions to sort a big list
-void	sort_big_list(t_stack **a);
-void	radix(t_stack **a, int max_bits);
+void	sort_big_list(t_stack **a, t_stack **b);
+void	radix(t_stack **a, t_stack **b, int max_bits);
 
 // functions to sort a small list
-void	sort_small_list(t_stack **a, int size);
+void	sort_small_list(t_stack **a, t_stack **b, int size);
 void	sort_3(t_stack **a);
 void	sort_4(t_stack **a, t_stack **b);
 

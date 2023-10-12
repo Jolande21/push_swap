@@ -6,7 +6,7 @@
 #    By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 17:32:01 by jolandestee       #+#    #+#              #
-#    Updated: 2023/10/12 11:36:56 by jsteenpu         ###   ########.fr        #
+#    Updated: 2023/10/12 18:35:42 by jsteenpu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 
 # Compiling and CFLAGS
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 # Directories 
 LIBFT_DIR = libft

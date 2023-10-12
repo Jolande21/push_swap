@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:56:54 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 14:39:51 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:10:51 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,11 @@ t_stack	*ft_create_list_element(int number)
 		return (NULL);
 	new_element->value = number;
 	new_element->index = -1;
-	new_element->index_bin = 0;
 	new_element->next = NULL;
 	return (new_element);
 }
 
-// print values stored in the created stack/linked list
+// prints values stored in the created stack/linked list
 
 void	print_stack(t_stack *stack)
 {
@@ -79,7 +78,7 @@ void	print_stack(t_stack *stack)
 	current = stack;
 	while (current)
 	{
-		printf("value: %d\t index: %d\t binary index: %i\n", current->value, current->index, current->index_bin);
+		printf("value: %d\t index: %d\t address next: %p\n", current->value, current->index, current->next);
 		current = current->next;
 	}
 	printf("\n");

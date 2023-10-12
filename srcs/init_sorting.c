@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 16:55:43 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:26:18 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	is_sorted(t_stack **a)
 // creates index of the set of ints stored in the linked list
 // sorting based on size of the list (small <= 5 / big < 5)
 
-void	init_sorting(t_stack **a)
+void	init_sorting(t_stack **a, t_stack **b)
 {
 	int	size;
 
@@ -47,10 +47,7 @@ void	init_sorting(t_stack **a)
 	if (!init_index_stack(a))
 		exit(1);
 	if (size <= 5)
-		sort_small_list(a, size);
+		sort_small_list(a, b, size);
 	else
-	{
-		binary_index(*a);
-		sort_big_list(a);
-	}
+		sort_big_list(a, b);
 }

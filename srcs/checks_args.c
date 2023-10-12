@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:02:17 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 12:30:47 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 17:58:02 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,5 @@ int	check_args(int argc, char **argv)
 		init_checks(i, args);
 		i++;
 	}
-	return (1);
+	return (i);
 }

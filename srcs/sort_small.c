@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:05:28 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 14:32:27 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:27:49 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,14 @@ void	sort_3(t_stack **a)
 	}
 }
 
-void	sort_small_list(t_stack **a, int size)
+void	sort_small_list(t_stack **a, t_stack **b, int size)
 {
-	t_stack	*b;
-
-	b = NULL;
 	if (size == 2)
 		ft_sa(a);
 	else if (size == 3)
 		sort_3(a);
 	else if (size == 4)
-		sort_4(a, &b);
+		sort_4(a, b);
 	else if(size == 5)
-		sort_5(a, &b);
+		sort_5(a, b);
 }

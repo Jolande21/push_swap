@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions_b.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:39:55 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/06 12:24:22 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/12 18:35:13 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,15 @@ void	ft_pb(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
+	printf("the address of the head of a: %p\n", (*a));
+	printf("the address of the head of b: %p\n", (*b));
 	if (!*a)
 		return ;
 	temp = *b;
 	*b = *a;
+	printf("the new address of the head of b: %p\n", (*b));
 	*a = (*a)->next;
+	printf("the new address of the head of a: %p\n", (*a));
 	(*b)->next = temp;
 	write(1, "pb\n", 3);
 }

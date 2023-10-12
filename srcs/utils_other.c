@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:40:38 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 14:31:54 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 17:17:42 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,19 @@ void	ft_error(char *message)
 	}
 	write(1, "\n", 1);
 	exit(0);
+}
+// converts an integer to binary
+
+unsigned int	int_to_bin(unsigned int nbr)
+{
+	unsigned int	bin;
+	
+	if (nbr == 0)
+		return (0);
+	if (nbr == 1)
+		return (1);
+	bin = (nbr % 2) + 10 * int_to_bin(nbr / 2);
+	return (bin);	
 }
 
 int	get_max_index_position(t_stack **a, int size)

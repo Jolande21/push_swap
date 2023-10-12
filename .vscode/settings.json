@@ -16,6 +16,9 @@
         "unordered_map": "c",
         "unordered_set": "c",
         "utility": "c",
-        "vector": "c"
+        "vector": "c",
+        "libft.h": "c",
+        "algorithm": "c",
+        "stdlib.h": "c"
     }
 }

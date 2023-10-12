@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 12:25:45 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:40:58 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,11 @@ typedef struct s_stack
 
 /*---------------------------- FUNCTIONS ---------------------------------------*/
 
+// checks to be done on the args
+int	check_args(int argc, char **argv);
+
 // initializes the linked list for stack a 
 t_stack	*init_stack(int argc, char **argv);
-
-// checks to be done on the created stack/list a
-int	is_sorted(t_stack **a);
-int	list_checks(t_stack **a);
-int	check_args(int argc, char **argv);
 
 // utils for linked lists
 int		list_size(t_stack *a);
@@ -47,11 +45,10 @@ t_stack	*ft_create_list_element(int number);
 void	ft_add_element_list_end(t_stack **a, t_stack *new_element);
 void	print_stack(t_stack *stack);
 
-
 // utils for other functionalities
 void	ft_error(char *message);
 
-// instructions 
+// instructions to sort stack a and stack b
 void	ft_sa(t_stack **a);
 void	ft_pa(t_stack **a, t_stack **b);
 void	ft_ra(t_stack **a);
@@ -71,6 +68,10 @@ int	init_index_stack(t_stack **a);
 // conversion index to binary 
 void			binary_index(t_stack *a);
 unsigned int	int_to_bin(unsigned int nbr);
+
+// general sorting functions 
+void	init_sorting(t_stack **a);
+int		is_sorted(t_stack **a);
 
 // functions to sort a big list
 void	sort_big_list(t_stack *head);

@@ -6,13 +6,13 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 12:24:37 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:20:38 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*init_stack(int ac, char **av)
+t_stack	*init_stack(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*new_element;
@@ -22,21 +22,20 @@ t_stack	*init_stack(int ac, char **av)
 
 	i = 0;
 	args = NULL;
-	if (ac == 2)
+	if (argc == 2)
 	{
-		args = ft_split(av[1], ' ');
+		args = ft_split(argv[1], ' ');
 		if (!args)
 			return (NULL);
 	}
 	else
 	{
 		i = 1;
-		args = av;
+		args = argv;
 	}
 	a = NULL;
 	while (args[i])
 	{
-		//printf("OK end\n");
 		number = ft_atoi(args[i]);
 		new_element = ft_create_list_element(number);
 		if (!new_element)
@@ -46,14 +45,3 @@ t_stack	*init_stack(int ac, char **av)
 	}
 	return (a);
 }
-//printf("newly created element: %d\t", new->value);
-//printf("the address: %p\n", new);
-// t_stack	*init_linked_list(char *split)
-// {
-// 	t_stack	*new;
-// 	int		number;
-	
-// 	number = ft_atoi(split);
-// 	new = ft_create_list_element(number);
-// 	return (new);
-// }

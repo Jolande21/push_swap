@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:56:54 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 10:41:52 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:33:09 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ int	list_size(t_stack *a)
 	int	count;
 
 	count = 0;
-	//printf("list_size: the address of 1st node: %p\n", a);
 	while (a)
 	{
 		count++;
 		a = a->next;
-		//printf("list_size: the address of the next node: %p\n", a);
 	}
 	return (count);
 }
@@ -41,7 +39,7 @@ t_stack	*ft_last_element_list(t_stack *head)
 	return (last_element);
 }
 
-// add a new element at the end of the list
+// adds a new element at the end of the list
 
 void	ft_add_element_list_end(t_stack **a, t_stack *new_element)
 {

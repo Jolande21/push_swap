@@ -6,13 +6,13 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/10 14:46:15 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:42:16 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// this function looks for the min int in the linked list a
+// looks for the min int in the linked list a
 
 static int	get_minimum(t_stack **a)
 {
@@ -30,7 +30,8 @@ static int	get_minimum(t_stack **a)
 	return (min_value);
 }
 
-// this function creates an index of the set of values provided as args
+// creates an index of the integer values (provided in args) 
+// stored in linked list a
 
 int	init_index_stack(t_stack **a)
 {
@@ -39,7 +40,6 @@ int	init_index_stack(t_stack **a)
 	int				min_value1;
 	int				min_value2;
 
-	//printf("---------------stack a after creating ascending index:--------------\n");
 	head = *a;
 	index = -1;
 	min_value1 = get_minimum(a); 
@@ -60,7 +60,6 @@ int	init_index_stack(t_stack **a)
 		else
 			head = head->next;
 	}
-	//print_stack(*a);
 	return (1);
 }
 

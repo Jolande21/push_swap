@@ -1,54 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks_list.c                                      :+:      :+:    :+:   */
+/*   init_sorting.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/10 17:30:40 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:48:15 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+// checks if the linked list a is sorted
+// returns 0 if the list is not sorted
+// returns 1 if the list is sorted 
 
 int	is_sorted(t_stack **a)
 {
 	t_stack	*current;
 
 	current = *a;
-	//printf("the address of the first node: %p\n", current);
 	while (current && current->next)
 	{
-		// check if the value (number) of the current element of the list
-		// if it is greater than the value of the next number
-		// then the list is not sorted
-		//printf("the current element's value: %d\n", current->value);
 		if (current->value > current->next->value)
 			return (0);
-		//printf("the address of the next node: %p\n", current->next);
 		current = current->next;
 	}
 	return (1);
 }
 
-int	list_checks(t_stack **a)
+// checks the size of the list and if the list is sorted
+// if the list is not sorted,
+// creates index of the set of ints stored in the linked list
+// sorting based on size of the list (small <= 5 / big < 5)
+
+void	init_sorting(t_stack **a)
 {
 	int	size;
 
-	//printf("----------------------the size of the list:-------------------------\n");
 	size = list_size(*a);
 	if (size == 1)
 		exit(1);
 	if (is_sorted(a))
-	{
-		//ft_error("the stack is already sorted.");
 		exit(1);
+	if (!init_index_stack(a))
+		exit(1);
+	if (size <= 5)
+		sort_small_list(a, size);
+	else
+	{
+		binary_index(*a);
+		sort_big_list(*a);
 	}
-	return (1);
 }
-
-
-
-//printf("the number of elements in stack a: %d\n", size);

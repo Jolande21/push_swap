@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/11 14:54:09 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/12 12:25:45 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	
 	if (argc < 2)
 		exit(1);
-	if (!ft_check_args(argc, argv))
+	if (!check_args(argc, argv))
 		exit(1);
 	a = init_stack(argc, argv);
 	if (!a)

@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/10 14:46:15 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:25:45 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_stack	*init_stack(int argc, char **argv);
 // checks to be done on the created stack/list a
 int	is_sorted(t_stack **a);
 int	list_checks(t_stack **a);
-int	ft_check_args(int argc, char **argv);
+int	check_args(int argc, char **argv);
 
 // utils for linked lists
 int		list_size(t_stack *a);

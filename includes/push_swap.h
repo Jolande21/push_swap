@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 14:37:05 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 16:42:39 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ void	init_sorting(t_stack **a);
 int		is_sorted(t_stack **a);
 
 // functions to sort a big list
-void	sort_big_list(t_stack *head);
-void	radix(t_stack *a, int max_bits);
+void	sort_big_list(t_stack **a);
+void	radix(t_stack **a, int max_bits);
 
 // functions to sort a small list
 void	sort_small_list(t_stack **a, int size);

@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 14:38:37 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 16:55:43 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	init_sorting(t_stack **a)
 	else
 	{
 		binary_index(*a);
-		sort_big_list(*a);
+		sort_big_list(a);
 	}
-	print_stack(*a);
 }

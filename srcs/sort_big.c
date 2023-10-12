@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 16:09:05 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 16:56:01 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ this array stores the binary of index
 */
 
 
-void	sort_big_list(t_stack *head)
+void	sort_big_list(t_stack **a)
 {
 	t_stack	*current;
 	int		max_bits;
@@ -40,12 +40,12 @@ void	sort_big_list(t_stack *head)
 	int		max_index_bin;
 	
 	// look for the max index = the size of the list - 1 
-	max_index = list_size(head) - 1;
+	max_index = list_size(*a) - 1;
 
 	// count the number of bits in the max index
 	max_bits = 0;
 	max_index_bin = 0;
-	current = head;
+	current = *a;
 	while (current)
 	{
 		if (current->index == max_index)
@@ -62,77 +62,34 @@ void	sort_big_list(t_stack *head)
 	}
 	
 	// push the elements from stack a to b
-	radix(head, max_bits);
+	radix(a, max_bits);
 }
 
-void	radix(t_stack *a, int max_bits)
+void	radix(t_stack **a, int max_bits)
 {
 	t_stack	*b;
-	t_stack *current;
 	int		i;
 	int		size;
+	int		elements;
+	unsigned int binary;
 	
 	b = NULL;
 	i = 0;
+	size = list_size(*a);
 	while (i < max_bits)
 	{
-		if (i > 0)
+		elements = size;
+		while (elements) // check for every element of the list
 		{
-			current = a;
-			while (current)
-			{
-				current->index = current->index>>1;
-				current->index_bin = int_to_bin(current->index);
-				current = current->next;
-			}
-		}
-		size = list_size(a);
-		while (size) // check for every element of the list
-		{
-			if ((a->index_bin) % 10 == 0)
-				ft_pb(&a, &b);
+			binary = int_to_bin(((*a)->index)>>i);
+			if (binary % 10 == 0)
+				ft_pb(a, &b);
 			else
-				ft_ra(&a);
-			size--;
+				ft_ra(a);
+			elements--;
 		}
 		while (b)
-			ft_pa(&a, &b);
+			ft_pa(a, &b);
 		i++;
 	}
 }
-
-// void	radix(t_stack *a, int max_bits)
-// {
-// 	t_stack	*b;
-// 	t_stack *current;
-// 	int		i;
-// 	int		size;
-	
-// 	b = NULL;
-// 	i = 0;
-// 	while (i < max_bits)
-// 	{
-// 		if (i > 0)
-// 		{
-// 			current = a;
-// 			while (current)
-// 			{
-// 				current->index = current->index>>1;
-// 				current->index_bin = int_to_bin(current->index);
-// 				current = current->next;
-// 			}
-// 		}
-// 		size = list_size(a);
-// 		while (size) // check for every element of the list
-// 		{
-// 			if ((a->index_bin) % 10 == 0)
-// 				ft_pb(&a, &b);
-// 			else
-// 				ft_ra(&a);
-// 			size--;
-// 		}
-// 		while (b)
-// 			ft_pa(&a, &b);
-// 		i++;
-// 	}
-// }

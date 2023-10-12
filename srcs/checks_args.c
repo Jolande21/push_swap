@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:02:17 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/10 18:04:16 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:23:19 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static int	ft_is_num(char *num)
 		return (0);
 	while (num[i])
 	{
-		//printf("Ok\n");
 		if (!ft_isdigit(num[i]))
 			return (0);
 		i++;

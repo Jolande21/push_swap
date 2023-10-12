@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:56:54 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/11 14:47:06 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/12 10:41:52 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	ft_add_element_list_end(t_stack **a, t_stack *new_element)
 		*a = new_element;
 	else
 	{
-		//printf("OK\n");
 		former_last = ft_last_element_list(*a);
 		former_last->next = new_element;
 	}	

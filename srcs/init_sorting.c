@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/13 13:03:35 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:36:37 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,17 @@ void	init_sorting(t_stack **a, t_stack **b)
 	if (size == 1)
 		exit(1);
 	if (is_sorted(a))
+	{
+		ft_free_stack(a);
+		ft_free_stack(b);
 		exit(1);
+	}
 	if (!init_index_stack(a))
+	{
+		ft_free_stack(a);
+		ft_free_stack(b);
 		exit(1);
+	}
 	if (size <= 5)
 		sort_small_list(a, b, size);
 	else

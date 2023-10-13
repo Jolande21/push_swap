@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/13 13:25:38 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:31:26 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ int	main(int argc, char **argv)
 	if (!init_stack(argc, argv, a))
 		exit(1);
 	init_sorting(a, b);
+	ft_free_stack(a);
+	ft_free_stack(b);
 	return (0); 
 }

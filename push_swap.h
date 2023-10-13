@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/13 13:18:16 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:36:28 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void			ft_add_element_list_end(t_stack **a, t_stack *new_element);
 // utils for other functionalities
 void			ft_error(char *message);
 void			ft_free(char **array);
+void			ft_free_stack(t_stack **stack);
 int				get_max_index_position(t_stack **a, int size);
 int				get_min_index(t_stack *a);
 unsigned int	int_to_bin(unsigned int nbr);

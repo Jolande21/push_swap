@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:40:38 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/13 13:19:09 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:29:55 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,19 @@ void	ft_free(char **array)
 		i++;
 	}
 	free(array);
+}
+
+void	ft_free_stack(t_stack **stack)
+{
+	t_stack	*to_delete;
+
+	while (*stack)
+	{
+		to_delete = *stack;
+		*stack = (*stack)->next;
+		free(to_delete);
+	}	
+	free(stack);
 }
 
 unsigned int	int_to_bin(unsigned int nbr)

@@ -55,4 +55,4 @@ dkms.conf
 push_swap_tester/
 
 # vscode
-.vscode
+.vscode/

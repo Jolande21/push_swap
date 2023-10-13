@@ -53,3 +53,6 @@ dkms.conf
 
 # tester
 push_swap_tester/
+
+# vscode
+.vscode

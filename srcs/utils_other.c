@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:40:38 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/13 13:29:55 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:42:12 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_free_stack(t_stack **stack)
 		to_delete = *stack;
 		*stack = (*stack)->next;
 		free(to_delete);
-	}	
+	}
 	free(stack);
 }
 
@@ -65,23 +65,6 @@ unsigned int	int_to_bin(unsigned int nbr)
 		return (1);
 	bin = (nbr % 2) + 10 * int_to_bin(nbr / 2);
 	return (bin);
-}
-
-int	get_max_index_position(t_stack **a, int size)
-{
-	t_stack	*current;
-	int		position;
-
-	position = 0;
-	current = *a;
-	while (position < size)
-	{
-		if (current->index == (size - 1))
-			break ;
-		position++;
-		current = current->next;
-	}
-	return (position);
 }
 
 int	get_min_index(t_stack *a)

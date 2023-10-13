@@ -6,11 +6,28 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:05:28 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/13 13:03:35 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:41:15 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+static int	get_max_index_position(t_stack **a, int size)
+{
+	t_stack	*current;
+	int		position;
+
+	position = 0;
+	current = *a;
+	while (position < size)
+	{
+		if (current->index == (size - 1))
+			break ;
+		position++;
+		current = current->next;
+	}
+	return (position);
+}
 
 void	sort_5(t_stack **a, t_stack **b)
 {

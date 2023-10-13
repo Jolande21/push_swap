@@ -6,27 +6,27 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 17:32:20 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:03:35 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../push_swap.h"
 
 // looks for the min int in the linked list a
 // if index has value -1; set the new minimum value at that index
 
 static int	get_minimum(t_stack **a)
 {
-	t_stack	*head;
+	t_stack	*current;
 	int		min_value;
 
-	head = *a;
-	min_value = INT_MAX;
-	while (head)
+	current = *a;
+	min_value = 2147483647;
+	while (current)
 	{
-		if (head->value < min_value && head->index == -1)
-			min_value = head->value;
-		head = head->next;
+		if (current->value < min_value && current->index == -1)
+			min_value = current->value;
+		current = current->next;
 	}
 	return (min_value);
 }
@@ -38,29 +38,21 @@ int	init_index_stack(t_stack **a)
 {
 	t_stack			*current;
 	unsigned int	index;
-	int				min_value1;
-	int				min_value2;
+	int				min_value;
 
 	current = *a;
 	index = -1;
-	min_value1 = get_minimum(a); 
-	min_value2  = min_value1; 
+	min_value = get_minimum(a);
 	while (current)
 	{
-		if (current->value == min_value1 && current->index == -1)
+		if (current->value == min_value && current->index == -1)
 		{
-			index++;
-			current->index = index;
-			min_value2 = get_minimum(a);
-		}
-		if (min_value1 != min_value2)
-		{
+			current->index = index++;
 			current = *a;
-			min_value1 = min_value2;
+			min_value = get_minimum(a);
 		}
 		else
 			current = current->next;
 	}
 	return (1);
 }
-

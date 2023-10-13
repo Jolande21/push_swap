@@ -6,11 +6,11 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:05:28 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 18:27:49 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:03:35 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../push_swap.h"
 
 void	sort_5(t_stack **a, t_stack **b)
 {
@@ -65,7 +65,7 @@ void	sort_4(t_stack **a, t_stack **b)
 void	sort_3(t_stack **a)
 {
 	int		min;
-	
+
 	if (is_sorted(a))
 		return ;
 	min = get_min_index(*a);
@@ -99,6 +99,6 @@ void	sort_small_list(t_stack **a, t_stack **b, int size)
 		sort_3(a);
 	else if (size == 4)
 		sort_4(a, b);
-	else if(size == 5)
+	else if (size == 5)
 		sort_5(a, b);
 }

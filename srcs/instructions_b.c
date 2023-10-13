@@ -6,11 +6,11 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:39:55 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 18:35:13 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:03:35 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../push_swap.h"
 
 /*
 sb (swap b): swap the first 2 elements at the top of stack b
@@ -27,7 +27,7 @@ void	ft_sb(t_stack **b)
 	*b = (*b)->next;
 	second->next = (*b)->next;
 	(*b)->next = second;
-	write(1, "sb\n", 3);  
+	write(1, "sb\n", 3);
 }
 
 // pb (push b): take the 1st element at the top of a and put it at the top of b
@@ -37,15 +37,11 @@ void	ft_pb(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
-	printf("the address of the head of a: %p\n", (*a));
-	printf("the address of the head of b: %p\n", (*b));
 	if (!*a)
 		return ;
 	temp = *b;
 	*b = *a;
-	printf("the new address of the head of b: %p\n", (*b));
 	*a = (*a)->next;
-	printf("the new address of the head of a: %p\n", (*a));
 	(*b)->next = temp;
 	write(1, "pb\n", 3);
 }
@@ -57,7 +53,7 @@ void	ft_rb(t_stack **b)
 {
 	t_stack	*temp;
 	t_stack	*last_node;
-	
+
 	if (!*b)
 		return ;
 	temp = *b;
@@ -79,10 +75,10 @@ void	ft_rrb(t_stack **b)
 	int		i;
 
 	i = 0;
-	temp = *b; // 5850
+	temp = *b;
 	while ((*b)->next)
 	{
-		*b = (*b)->next; // 5820
+		*b = (*b)->next;
 		i++;
 	}
 	(*b)->next = temp; 

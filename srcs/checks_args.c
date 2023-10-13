@@ -6,11 +6,11 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:02:17 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/12 17:58:02 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:16:46 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../push_swap.h"
 
 static int	duplicate(int number, char **args, int position)
 {
@@ -44,10 +44,10 @@ static int	ft_is_num(char *num)
 	return (1);
 }
 
-static void	init_checks(int	i, char **args)
+static void	init_checks(int i, char **args)
 {
 	long	number;
-	
+
 	if (!ft_is_num(args[i]))
 		ft_error("some arguments are not integers.");
 	number = ft_atoi(args[i]);
@@ -80,5 +80,7 @@ int	check_args(int argc, char **argv)
 		init_checks(i, args);
 		i++;
 	}
-	return (i);
+	if (argc == 2)
+		ft_free(args);
+	return (1);
 }

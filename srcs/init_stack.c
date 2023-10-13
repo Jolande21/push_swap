@@ -6,17 +6,16 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/12 18:11:53 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:03:35 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../push_swap.h"
 
 int	init_stack(int argc, char **argv, t_stack **a)
 {
 	t_stack	*new_element;
 	char	**args;
-	int		number;
 	int		i;
 
 	i = 0;
@@ -34,10 +33,7 @@ int	init_stack(int argc, char **argv, t_stack **a)
 	}
 	while (args[i])
 	{
-		number = ft_atoi(args[i]);
-		new_element = ft_create_list_element(number);
-		if (!new_element)
-			return (0);
+		new_element = ft_create_list_element(ft_atoi(args[i]));
 		ft_add_element_list_end(a, new_element);
 		i++;
 	}

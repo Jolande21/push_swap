@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   instructions_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:35:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/05 16:50:56 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/13 13:03:35 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../push_swap.h"
 
 /* 
 sa (swap a): swap the first 2 elements at the top of stack a
@@ -36,7 +36,7 @@ void	ft_sa(t_stack **a)
 void	ft_pa(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
-	
+
 	if (!*b)
 		return ;
 	temp = *a;
@@ -52,14 +52,14 @@ void	ft_pa(t_stack **a, t_stack **b)
 void	ft_ra(t_stack **a)
 {
 	t_stack	*last_node;
-	t_stack *temp;
-	
+	t_stack	*temp;
+
 	if (!*a)
 		return ;
-	temp = *a; // 6810
-	*a = (*a)->next; // 6830
-	last_node = ft_last_element_list(*a); //68f0 
-	last_node->next = temp; // 6810
+	temp = *a;
+	*a = (*a)->next;
+	last_node = ft_last_element_list(*a); 
+	last_node->next = temp;
 	temp->next = NULL;
 	write(1, "ra\n", 3); 
 }
@@ -75,10 +75,10 @@ void	ft_rra(t_stack **a)
 	int		i;
 
 	i = 0;
-	temp = *a; // 5850
+	temp = *a;
 	while ((*a)->next)
 	{
-		*a = (*a)->next; // 5820
+		*a = (*a)->next;
 		i++;
 	}
 	(*a)->next = temp; 

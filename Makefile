@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+         #
+#    By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 17:32:01 by jolandestee       #+#    #+#              #
-#    Updated: 2023/10/13 13:47:05 by jsteenpu         ###   ########.fr        #
+#    Updated: 2023/10/16 10:12:24 by jolandestee      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

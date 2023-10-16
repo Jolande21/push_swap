@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/13 13:03:35 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/16 10:02:06 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ int	init_stack(int argc, char **argv, t_stack **a)
 		ft_add_element_list_end(a, new_element);
 		i++;
 	}
+	if (argc == 2)
+		ft_free(args);
 	return (1);
 }

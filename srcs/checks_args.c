@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks_args.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:02:17 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/13 13:16:46 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/16 10:16:52 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ static void	init_checks(int i, char **args)
 	long	number;
 
 	if (!ft_is_num(args[i]))
-		ft_error("some arguments are not integers.");
+		ft_error("");
 	number = ft_atoi(args[i]);
 	if (number < -2147483648 || number > 2147483647)
-		ft_error("some arguments are bigger or smaller than an int.");
+		ft_error("");
 	if (duplicate(number, args, i))
-		ft_error("there are duplicates.");
+		ft_error("");
 }
 
 int	check_args(int argc, char **argv)

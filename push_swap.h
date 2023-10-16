@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/16 09:48:02 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/16 15:48:57 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 # include "libft/libft.h"
 # include <stdlib.h>
-# include <stdio.h> // to delete
 
 /*---------------------------- STRUCTURE -------------------------------------*/
 
@@ -75,7 +74,7 @@ void			sort_big_list(t_stack **a, t_stack **b);
 // functions to sort a small list
 void			sort_small_list(t_stack **a, t_stack **b, int size);
 void			sort_3(t_stack **a);
-void			sort_4(t_stack **a, t_stack **b);
+void			sort_4(t_stack **a, t_stack **b, int min);
 void			sort_5(t_stack **a, t_stack **b);
 
 #endif

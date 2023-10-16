@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+         #
+#    By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 17:32:01 by jolandestee       #+#    #+#              #
-#    Updated: 2023/10/16 10:12:24 by jolandestee      ###   ########.fr        #
+#    Updated: 2023/10/16 13:17:28 by jsteenpu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 
 # Compiling and CFLAGS
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 # Directories 
 LIBFT_DIR = libft

@@ -6,22 +6,22 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:05:28 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/13 13:41:15 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:34:36 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	get_max_index_position(t_stack **a, int size)
+int	get_min_index_position(t_stack **a, int min)
 {
 	t_stack	*current;
 	int		position;
 
-	position = 0;
 	current = *a;
-	while (position < size)
+	position = 0;
+	while (current)
 	{
-		if (current->index == (size - 1))
+		if (current->index == min)
 			break ;
 		position++;
 		current = current->next;
@@ -33,7 +33,7 @@ void	sort_5(t_stack **a, t_stack **b)
 {
 	int	position;
 
-	position = get_max_index_position(a, 5);
+	position = get_min_index_position(a, 0);
 	if (position == 1)
 		ft_ra(a);
 	else if (position == 2)
@@ -48,22 +48,20 @@ void	sort_5(t_stack **a, t_stack **b)
 	}
 	else if (position == 4)
 		ft_rra(a);
+	if (is_sorted(a))
+		return ;
 	ft_pb(a, b);
-	sort_4(a, b);
+	sort_4(a, b, 1);
 	ft_pa(a, b);
-	ft_ra(a);
 }
 
-void	sort_4(t_stack **a, t_stack **b)
+void	sort_4(t_stack **a, t_stack **b, int min)
 {
 	int		position;
 
-	position = get_max_index_position(a, 4);
+	position = get_min_index_position(a, min);
 	if (position == 0 && is_sorted(a))
-	{
-		ft_ra(a);
 		return ;
-	}
 	if (position == 1)
 		ft_ra(a);
 	else if (position == 2)
@@ -73,10 +71,11 @@ void	sort_4(t_stack **a, t_stack **b)
 	}
 	else if (position == 3)
 		ft_rra(a);
+	if (is_sorted(a))
+		return ;
 	ft_pb(a, b);
 	sort_3(a);
 	ft_pa(a, b);
-	ft_ra(a);
 }
 
 void	sort_3(t_stack **a)
@@ -115,7 +114,7 @@ void	sort_small_list(t_stack **a, t_stack **b, int size)
 	else if (size == 3)
 		sort_3(a);
 	else if (size == 4)
-		sort_4(a, b);
+		sort_4(a, b, 0);
 	else if (size == 5)
 		sort_5(a, b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_sorting.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/16 10:05:04 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/16 15:34:59 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

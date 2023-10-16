@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/16 10:02:06 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/16 15:47:09 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	init_stack(int argc, char **argv, t_stack **a)
 {
-	t_stack	*new_element;
 	char	**args;
 	int		i;
 
@@ -33,8 +32,7 @@ int	init_stack(int argc, char **argv, t_stack **a)
 	}
 	while (args[i])
 	{
-		new_element = ft_create_list_element(ft_atoi(args[i]));
-		ft_add_element_list_end(a, new_element);
+		ft_add_element_list_end(a, ft_create_list_element(ft_atoi(args[i])));
 		i++;
 	}
 	if (argc == 2)

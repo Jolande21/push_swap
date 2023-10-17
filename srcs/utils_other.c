@@ -6,7 +6,7 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:40:38 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/17 12:37:04 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/17 16:10:31 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_error(char *message)
 {
 	ft_putendl_fd(message, 2);
-	exit(1);
+	exit (1);
 }
 
 void	ft_free(char **array)
@@ -36,13 +36,15 @@ void	ft_free(char **array)
 
 void	ft_free_stack(t_stack **stack)
 {
-	t_stack	*to_delete;
+	t_stack	*head;
+	t_stack	*tmp;
 
-	while (*stack)
+	head = *stack;
+	while (head)
 	{
-		to_delete = *stack;
-		*stack = (*stack)->next;
-		free(to_delete);
+		tmp = head;
+		head = head->next;
+		free(tmp);
 	}
 	free(stack);
 }

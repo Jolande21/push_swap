@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:27:34 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/16 15:48:57 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:06:28 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void			ft_ss(t_stack **a, t_stack **b);
 void			ft_rr(t_stack **a, t_stack **b);
 void			ft_rrr(t_stack **a, t_stack **b);
 
-// function to create an index of the elements/nodes in the linked list
+// function to create an index in ascending order for each element/node
 int				init_index_stack(t_stack **a);
 
 // general sorting functions 

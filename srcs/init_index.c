@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   init_index.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:12:00 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/16 15:35:31 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:08:04 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 // looks for the min int in the linked list (stack a)
-// if index has value -1; set the new minimum value at that index
+// if index has value -1 > set the new minimum value at that index
 
 static int	get_minimum(t_stack **a)
 {

@@ -6,13 +6,13 @@
 /*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:02:17 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/16 10:16:52 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/17 12:17:24 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	duplicate(int number, char **args, int position)
+static int	duplicate(long number, char **args, int position)
 {
 	int	i;
 
@@ -44,17 +44,29 @@ static int	ft_is_num(char *num)
 	return (1);
 }
 
-static void	init_checks(int i, char **args)
+static void	init_checks(int i, char **args, int argc)
 {
 	long	number;
 
 	if (!ft_is_num(args[i]))
-		ft_error("");
+	{
+		if (argc == 2)
+			ft_free(args);
+		ft_error("Error");
+	}
 	number = ft_atoi(args[i]);
 	if (number < -2147483648 || number > 2147483647)
-		ft_error("");
+	{
+		if (argc == 2)
+			ft_free(args);
+		ft_error("Error");
+	}
 	if (duplicate(number, args, i))
-		ft_error("");
+	{
+		if (argc == 2)
+			ft_free(args);
+		ft_error("Error");
+	}
 }
 
 int	check_args(int argc, char **argv)
@@ -77,7 +89,7 @@ int	check_args(int argc, char **argv)
 	}
 	while (args[i])
 	{
-		init_checks(i, args);
+		init_checks(i, args, argc);
 		i++;
 	}
 	if (argc == 2)

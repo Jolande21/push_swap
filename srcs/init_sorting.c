@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_sorting.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:55:56 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/16 15:34:59 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:08:20 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,12 @@ void	init_sorting(t_stack **a, t_stack **b)
 
 	size = ft_list_size(*a);
 	if (size == 1 || is_sorted(a))
+	{
+		ft_free_stack(a);
+		ft_free_stack(b);
+		ft_error("Error");
+	}
+	if (is_sorted(a))
 	{
 		ft_free_stack(a);
 		ft_free_stack(b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:36:32 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/16 15:47:09 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:40:32 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

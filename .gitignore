@@ -56,3 +56,6 @@ push_swap_tester/
 
 # vscode
 .vscode/
+
+# executable 
+push_swap

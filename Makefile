@@ -6,7 +6,7 @@
 #    By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 17:32:01 by jolandestee       #+#    #+#              #
-#    Updated: 2023/10/17 18:08:21 by jolandestee      ###   ########.fr        #
+#    Updated: 2023/10/18 09:41:14 by jolandestee      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 
 # Compiling and CFLAGS
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 # Directories 
 LIBFT_DIR = libft

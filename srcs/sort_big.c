@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
+/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/17 18:06:44 by jolandestee      ###   ########.fr       */
+/*   Updated: 2023/10/18 10:37:28 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ Then, we start from the rightmost bit to the leftmost bit.
 
 At the i-th digit from the right, 
 if the i-th digit from the top of A = 0 --> push to B
-Else, ra to leave it in A. 
+Else, rotate a (ra) to leave i = 1 in A
 
-After we perform one operation on each number, 
-each of them is in the box that corresponds to its digit, 
-as how we put numbers in the boxes in radix sort.
+Keep doing this until all elements of list a have been checked.
+Push every element back from B to A.
+Repeat this max_bits times 
+max_bits = the number of bits of the highest index
 
 */
 

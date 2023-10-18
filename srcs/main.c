@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:34:01 by jolandestee       #+#    #+#             */
-/*   Updated: 2023/10/16 15:31:51 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/17 11:41:25 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	t_stack	**b;
 
 	if (argc < 2)
-		exit(1);
+		exit (1);
 	if (!check_args(argc, argv))
 		exit(1);
 	a = (t_stack **)malloc(sizeof(t_stack));
@@ -32,5 +32,5 @@ int	main(int argc, char **argv)
 	init_sorting(a, b);
 	ft_free_stack(a);
 	ft_free_stack(b);
-	return (0); 
+	exit (0);
 }

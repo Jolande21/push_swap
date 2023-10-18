@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_other.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:40:38 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/13 13:42:12 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:10:31 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,37 @@
 
 void	ft_error(char *message)
 {
-	int	i;
-
-	write(1, "Error: ", 7);
-	i = 0;
-	while (message[i])
-	{
-		write(1, &message[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
-	exit(0);
+	ft_putendl_fd(message, 2);
+	exit (1);
 }
 
 void	ft_free(char **array)
 {
 	int	i;
 
+	i = 0;
 	if (!array)
 		return ;
-	i = 0;
 	while (array[i])
+		i++;
+	while (i >= 0)
 	{
 		free(array[i]);
-		i++;
+		i--;
 	}
-	free(array);
 }
 
 void	ft_free_stack(t_stack **stack)
 {
-	t_stack	*to_delete;
+	t_stack	*head;
+	t_stack	*tmp;
 
-	while (*stack)
+	head = *stack;
+	while (head)
 	{
-		to_delete = *stack;
-		*stack = (*stack)->next;
-		free(to_delete);
+		tmp = head;
+		head = head->next;
+		free(tmp);
 	}
 	free(stack);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jolandesteenput <jolandesteenput@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:45:02 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/10/13 13:03:35 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:06:44 by jolandestee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 /*
 
 For radix sort, we need two boxes for 0 and 1 respectively. 
-Here, A as box 1 and B as box 0. 
+Here, A is box 1 and B is box 0. 
 Then, we start from the rightmost bit to the leftmost bit.
 
 At the i-th digit from the right, 
-if the i-th digit of the top number of A is 0, 
-we perform pb to put this number in stack B. 
-Else, we perform ra to leave it in stack A. 
+if the i-th digit from the top of A = 0 --> push to B
+Else, ra to leave it in A. 
 
 After we perform one operation on each number, 
 each of them is in the box that corresponds to its digit, 
